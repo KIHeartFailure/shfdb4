@@ -38,7 +38,7 @@ title = "The Swedish Heart Failure Registry (SwedeHF)"
 
 The Swedish Heart Failure Registry (SwedeHF) (Swedish: RiksSvikt) is managed by Uppsala Clinical Research Center (UCR).
 
-SwedeHF is a health quality and research registry that started in 2000 and became nationwide 2003. In 2019 30.4% of the prevalent heart failure population in Sweden were at some point registered in SwedeHF. Coverage is lower in primary care but few patients are seen exclusively in primary care and are therefore caught and registered in cardiology or internal medicine.
+SwedeHF is a health quality and research registry that started in 2000 and became nationwide 2003. In 2021 31.5% of the prevalent heart failure population in Sweden were at some point registered in SwedeHF. Coverage is lower in primary care but few patients are seen exclusively in primary care and are therefore caught and registered in cardiology or internal medicine.
 
 Up until April 2017 the only inclusion criterion was clinician-judged Heart Failure (HF). From April 2017 the inclusion criteria are ICD-10: I50.0, I50.1, I50.9, I42.0, I42.6, I42.7, I25.5, I11.0, I13.0, I13.2.
 

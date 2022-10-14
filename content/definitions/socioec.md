@@ -36,7 +36,7 @@ title = "Socio-economic variables"
  css_style = ""
 +++
 
-The socio-economic variables from LISAm Statistics Sweden, are from the year prior to the index year, 
+The socio-economic variables from LISA, Statistics Sweden, are from the year prior to the index year, 
 so a patient with an index date 2015-03-06 will have income, marriage status and education from 2014.
 
 The exact categorizations can be found https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/08-countryofbirth_child_scb.R and https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-lisa_scb.R

@@ -28,7 +28,7 @@ load(file = "C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/data/rsdata_for
 
 For all comorbidities and hospitalizations from the NPR date of admission/visit (INDATUM) is used to calculate if it is a comorbidity or outcome. Adjoining hospitalizations, where the discharge date of the former hospitalization is the same as the admission date of the latter, are merged together into one hospitalization in order to take into account possible transferrals between wards/hospitals.
 
-Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see [Data Sources](www.shfdb4/datasources/))).
+Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see [Data Sources](https://kiheartfailure.github.io/shfdb4/datasources/))).
 
 Limitation: Out-patient visits in speciality (but not primary) care are covered from 2001. Therefore, for the earlier visits, these are (partially) not included in the comorbidities.
 
