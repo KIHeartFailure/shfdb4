@@ -39,6 +39,6 @@ title = "Socio-economic variables"
 The socio-economic variables from LISA, Statistics Sweden, are from the year prior to the index year, 
 so a patient with an index date 2015-03-06 will have income, marriage status and education from 2014.
 
-The exact categorizations can be found https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/08-countryofbirth_child_scb.R and https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-lisa_scb.R
+The exact categorizations can be found https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-countryofbirth_child_scb.R and https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/10-lisa_scb.R
 
 Limitations: Unmarried persons cohabiting without children are classified as Living alone. Education is not registered for individuals < 25 years.

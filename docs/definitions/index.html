@@ -540,7 +540,7 @@ For the patients identified through the National Patient Register with ICD codes
     <div class="col-12 col-lg-8">
       <p>The socio-economic variables from LISA, Statistics Sweden, are from the year prior to the index year, 
 so a patient with an index date 2015-03-06 will have income, marriage status and education from 2014.</p>
-<p>The exact categorizations can be found <a href="https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/08-countryofbirth_child_scb.R">https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/08-countryofbirth_child_scb.R</a> and <a href="https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-lisa_scb.R">https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-lisa_scb.R</a></p>
+<p>The exact categorizations can be found <a href="https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-countryofbirth_child_scb.R">https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/09-countryofbirth_child_scb.R</a> and <a href="https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/10-lisa_scb.R">https://github.com/KIHeartFailure/shfdb4dm/blob/master/munge/10-lisa_scb.R</a></p>
 <p>Limitations: Unmarried persons cohabiting without children are classified as Living alone. Education is not registered for individuals &lt; 25 years.</p>
 
     </div>
@@ -593,7 +593,7 @@ so a patient with an index date 2015-03-06 will have income, marriage status and
     </div>
     <div class="col-12 col-lg-8">
       <p>For all comorbidities and hospitalizations from the NPR date of admission/visit (INDATUM) is used to calculate if it is a comorbidity or outcome. Adjoining hospitalizations, where the discharge date of the former hospitalization is the same as the admission date of the latter, are merged together into one hospitalization in order to take into account possible transferrals between wards/hospitals.</p>
-<p>Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see <a href="www.shfdb4/datasources/">Data Sources</a>)).</p>
+<p>Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see <a href="https://kiheartfailure.github.io/shfdb4/datasources/">Data Sources</a>)).</p>
 <p>Limitation: Out-patient visits in speciality (but not primary) care are covered from 2001. Therefore, for the earlier visits, these are (partially) not included in the comorbidities.</p>
 <table>
  <thead>
