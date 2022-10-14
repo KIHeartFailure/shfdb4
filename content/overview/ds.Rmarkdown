@@ -1,0 +1,175 @@
+---
+title: 'Descriptive statistics'
+widget: "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless: true  # This file represents a page section.
+active: true  # Activate this widget? true/false
+weight: 20  # Order that this section will appear in.
+output:
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+library(openxlsx)
+library(stringr)
+library(hfmisc)
+
+load(file = "C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/data/rsdata_for_webb.RData")
+meta <- read.xlsx("C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/metadata/meta_variables.xlsx")
+```             
+
+```{r tab}
+tabvars <- names(rsdata)[str_detect(names(rsdata),
+  "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm",
+  negate = T
+)]
+
+tabfunc <- function(data) {
+  # median
+  tabmed <- print(CreateTableOne(
+    data = data,
+    vars = tabvars
+  ),
+  varLabels = TRUE, missing = TRUE, printToggle = FALSE, test = FALSE,
+  catDigits = 1, contDigits = 1,
+  nonnormal = tabvars,
+  explain = FALSE,
+  noSpaces = TRUE
+  )
+  tabmed <- as_tibble(cbind(var = rownames(tabmed), tabmed))
+
+  # mean sd
+  tabmean <- print(CreateTableOne(
+    data = data,
+    vars = tabvars
+  ),
+  varLabels = TRUE, printToggle = FALSE, test = FALSE,
+  catDigits = 1, contDigits = 1,
+  explain = FALSE,
+  noSpaces = TRUE
+  )
+  tabmean <- as_tibble(cbind(var = rownames(tabmean), tabmean))
+
+  ### together
+  tab <- bind_cols(tabmed, tabmean %>% select(Overall), quiet = T)
+  tab <- tab %>%
+    mutate(
+      cont = grepl("[", Overall...2, fixed = TRUE),
+      Overall = if_else(cont, paste0(Overall...2, ", ", Overall...4), Overall...2)
+    ) %>%
+    select(var, Missing, Overall)
+  return(tab)
+}
+
+# Posts
+## Cases
+# tabcases <- tabfunc(data = rsdata %>% filter(casecontrol == "Case SwedeHF"))
+tabcases <- tabfunc(data = rsdata)
+## controls
+# tabcontrols <- tabfunc(rsdata %>% filter(casecontrol == "Control"))
+
+# Unique individuals
+rsdatau <- rsdata %>%
+  # filter(casecontrol == "Case") %>%
+  group_by(lopnr) %>%
+  arrange(shf_indexdtm) %>%
+  slice(n()) %>%
+  ungroup()
+# rsdataucon <- inner_join(rsdatau %>% select(LopNrcase, shf_indexdtm),
+#  rsdata %>% filter(casecontrol == "Control"),
+#  by = c("LopNrcase", "shf_indexdtm")
+# )
+# rsdatauboth <- bind_rows(rsdatau, rsdataucon)
+rsdatauboth <- rsdatau
+
+## Cases
+tabucases <- tabfunc(rsdatauboth)
+# tabucases <- tabfunc(rsdatauboth %>% filter(casecontrol == "Case"))
+
+## Controls
+# tabucontrols <- tabfunc(rsdatauboth %>% filter(casecontrol == "Control"))
+
+# tabboth <- full_join(tabcases, tabcontrols %>% select(-Missing), by = "vars")
+# tabuboth <- full_join(tabucases, tabucontrols %>% select(-Missing), by = "vars")
+taball <- bind_cols(tabcases, tabucases %>% select(-var))
+
+taball <- taball %>%
+  # remove = Yes
+  mutate(across(everything(), str_replace_all, fixed(" = Yes"), "")) %>%
+  # to get labs and units in place
+  mutate(
+    var_tmp = str_split(var, " = ", simplify = TRUE)[, 1],
+    val_tmp = str_split(var, " = ", simplify = TRUE)[, 2],
+    # if recoding or categorizing will still get org label
+    var_tmp2 = str_replace_all(var_tmp, "(_cat2|_cat)", "")
+  )
+
+taball <- left_join(taball,
+  meta %>%
+    select(variable, label, unit),
+  by = c("var_tmp2" = "variable")
+) %>%
+  mutate(
+    Variable = coalesce(label, var_tmp),
+    Variable = if_else(!is.na(unit),
+      paste0(Variable, " (", unit, ")"),
+      Variable
+    ),
+    Variable = if_else(val_tmp != "",
+      paste0(Variable, " ", val_tmp),
+      Variable
+    )
+  )
+
+# footnotes
+taball <- taball %>%
+  mutate(
+    footnote1 = if_else(str_detect(var_tmp, "^shf_"), footnote_marker_number(1), ""),
+    footnote2 = if_else(str_detect(var_tmp, "sos_"), footnote_marker_number(2), ""),
+    footnote3 = if_else(str_detect(var_tmp, "^scb_"), footnote_marker_number(3), "")
+  ) %>%
+  unite(footnote, starts_with("footnote"), sep = "") %>%
+  mutate(
+    # so no probs
+    # Variable = sanitize_text(Variable),
+    Variable = paste0(Variable, footnote),
+    # fix get/let
+    Variable = str_replace(Variable, ">=", "&ge;"),
+    Variable = str_replace(Variable, "<=", "&le;"),
+
+    # space in output
+    Variable = sub("  ", "&#160;&#160;&#160;", Variable)
+    # Variable <- str_replace(Variable, fixed("  "), "&nbsp;&nbsp;&nbsp;&nbsp;")
+    # Variable = sub("  ", "&nbsp", Variable)
+  ) %>%
+  select(Variable, Missing...2:Overall...5)
+
+
+colnames(taball) <- c("Variable", rep(c("% missing", "Case"), 2))
+
+footnote(knitr::kable(taball, row.names = F, escape = FALSE) %>%
+  add_header_above(c(" " = 1, "Posts" = 2, "Patients (last post)" = 2)),
+general = c(
+  "Posts/patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.",
+  "% missing is for cases (SwedeHF patients) only.",
+  "Categorical variables are presented with n (%) and continuous variables with median [q1-q3], mean (sd)."
+),
+number = c(
+  "Source: SwedeHF",
+  "Source: NPR",
+  "Source: SCB"
+), escape = FALSE
+)
+```

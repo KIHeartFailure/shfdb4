@@ -1,0 +1,2002 @@
+---
+title: 'Descriptive statistics'
+widget: "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless: true  # This file represents a page section.
+active: true  # Activate this widget? true/false
+weight: 20  # Order that this section will appear in.
+output:
+  html_document
+---
+<script src="/shfdb4/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/shfdb4/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+
+
+
+<table style="NAborder-bottom: 0;">
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Posts</div></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Patients (last post)</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;"> Variable </th>
+   <th style="text-align:left;"> % missing </th>
+   <th style="text-align:left;"> Case </th>
+   <th style="text-align:left;"> % missing </th>
+   <th style="text-align:left;"> Case </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> n </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 203428 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 112426 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Time in hospital at index hospitalization (days)<sup>1</sup> </td>
+   <td style="text-align:left;"> 64.7 </td>
+   <td style="text-align:left;"> 5.0 [3.0, 8.0], 7.4 (27.2) </td>
+   <td style="text-align:left;"> 62.1 </td>
+   <td style="text-align:left;"> 5.0 [3.0, 9.0], 7.8 (26.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Index year<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2015.0 [2010.0, 2018.0], 2014.0 (4.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2015.0 [2010.0, 2019.0], 2014.3 (5.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Type of visit Index<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 113662 (55.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 67261 (59.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LVEF (%)<sup>1</sup> </td>
+   <td style="text-align:left;"> 86.3 </td>
+   <td style="text-align:left;"> 39.0 [30.0, 45.0], 37.9 (11.9) </td>
+   <td style="text-align:left;"> 85.4 </td>
+   <td style="text-align:left;"> 40.0 [30.0, 50.0], 39.1 (12.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LVEF (%)<sup>1</sup> </td>
+   <td style="text-align:left;"> 17.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 19.6 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     ≥50 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37388 (22.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23158 (25.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     40-49 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 39494 (23.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 21825 (24.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     30-39 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 46043 (27.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23630 (26.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     &lt;30 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 45961 (27.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 21741 (24.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LVEF (%)<sup>1</sup> </td>
+   <td style="text-align:left;"> 17.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 19.6 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     HFrEF </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 92004 (54.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 45371 (50.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     HFmrEF </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 39494 (23.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 21825 (24.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     HFpEF </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37388 (22.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23158 (25.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LVEF (original) (%)<sup>1</sup> </td>
+   <td style="text-align:left;"> 10.5 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 12.4 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     ≥50 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37084 (20.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 22719 (23.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     40-49 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 41150 (22.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 22909 (23.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     30-39 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 51772 (28.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 27342 (27.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     &lt;30 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 51971 (28.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 25559 (25.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sex Male<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 130608 (64.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 69507 (61.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Age (years)<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 76.0 [67.0, 83.0], 73.9 (12.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 77.0 [68.0, 84.0], 75.2 (12.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Age (years) ≥75<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 110442 (54.3) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 66492 (59.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Civil status Single<sup>1</sup> </td>
+   <td style="text-align:left;"> 27.5 </td>
+   <td style="text-align:left;"> 61913 (42.0) </td>
+   <td style="text-align:left;"> 27.8 </td>
+   <td style="text-align:left;"> 36107 (44.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Living conditions Own home<sup>1</sup> </td>
+   <td style="text-align:left;"> 44.2 </td>
+   <td style="text-align:left;"> 108905 (96.0) </td>
+   <td style="text-align:left;"> 44.3 </td>
+   <td style="text-align:left;"> 59295 (94.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Location In-patient<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 71724 (35.3) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 42585 (37.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Smoking<sup>1</sup> </td>
+   <td style="text-align:left;"> 23.1 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 26.6 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Current </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17059 (10.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 9008 (10.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Former </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 70049 (44.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 36272 (43.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Never </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 69324 (44.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37291 (45.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Smoking<sup>1</sup> </td>
+   <td style="text-align:left;"> 23.1 </td>
+   <td style="text-align:left;"> 17059 (10.9) </td>
+   <td style="text-align:left;"> 26.6 </td>
+   <td style="text-align:left;"> 9008 (10.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcohol Risk<sup>1</sup> </td>
+   <td style="text-align:left;"> 38.5 </td>
+   <td style="text-align:left;"> 5135 (4.1) </td>
+   <td style="text-align:left;"> 42.0 </td>
+   <td style="text-align:left;"> 2807 (4.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Duration of HF &gt;6mo<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.5 </td>
+   <td style="text-align:left;"> 122920 (62.0) </td>
+   <td style="text-align:left;"> 2.8 </td>
+   <td style="text-align:left;"> 67480 (61.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Primary etiology<sup>1</sup> </td>
+   <td style="text-align:left;"> 40.1 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 40.8 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     DCM </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 10104 (8.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4578 (6.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Heart valve disease </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 9013 (7.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5287 (7.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Hypertension </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 31102 (25.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17628 (26.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     IHD </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49430 (40.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 25944 (39.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Known alcoholic cardiomyopathy </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 890 (0.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 462 (0.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Other </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 21277 (17.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 12663 (19.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NYHA class<sup>1</sup> </td>
+   <td style="text-align:left;"> 25.6 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 29.3 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     I </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17892 (11.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 10232 (12.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     II </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 73042 (48.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37326 (47.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     III </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 55895 (37.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 29159 (36.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     IV </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4435 (2.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2749 (3.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NYHA class III-IV<sup>1</sup> </td>
+   <td style="text-align:left;"> 25.6 </td>
+   <td style="text-align:left;"> 60330 (39.9) </td>
+   <td style="text-align:left;"> 29.3 </td>
+   <td style="text-align:left;"> 31908 (40.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Killip class<sup>1</sup> </td>
+   <td style="text-align:left;"> 95.8 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 94.6 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Chock or hypertension </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 26 (0.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 16 (0.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Edema </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 206 (2.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 149 (2.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     No signs of HF </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4021 (47.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2797 (45.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Rales or crackles </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4192 (49.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3153 (51.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Weight (kg)<sup>1</sup> </td>
+   <td style="text-align:left;"> 11.5 </td>
+   <td style="text-align:left;"> 79.0 [68.0, 91.7], 80.9 (19.2) </td>
+   <td style="text-align:left;"> 12.5 </td>
+   <td style="text-align:left;"> 77.5 [66.0, 90.0], 79.5 (19.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Height (cm)<sup>1</sup> </td>
+   <td style="text-align:left;"> 25.7 </td>
+   <td style="text-align:left;"> 173.0 [165.0, 179.0], 171.9 (10.1) </td>
+   <td style="text-align:left;"> 31.5 </td>
+   <td style="text-align:left;"> 172.0 [165.0, 179.0], 171.6 (10.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Systolic blood pressure (mmHg)<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.3 </td>
+   <td style="text-align:left;"> 125.0 [110.0, 140.0], 126.3 (20.6) </td>
+   <td style="text-align:left;"> 3.8 </td>
+   <td style="text-align:left;"> 125.0 [110.0, 140.0], 126.9 (20.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diastolic blood pressure (mmHg)<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.2 </td>
+   <td style="text-align:left;"> 70.0 [65.0, 80.0], 72.9 (11.9) </td>
+   <td style="text-align:left;"> 3.8 </td>
+   <td style="text-align:left;"> 70.0 [65.0, 80.0], 72.8 (11.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mean arterial pressure<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.2 </td>
+   <td style="text-align:left;"> 90.0 [81.7, 99.3], 90.7 (13.0) </td>
+   <td style="text-align:left;"> 3.8 </td>
+   <td style="text-align:left;"> 90.0 [81.7, 100.0], 90.9 (13.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mean arterial pressure &gt;90<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.2 </td>
+   <td style="text-align:left;"> 93744 (47.6) </td>
+   <td style="text-align:left;"> 3.8 </td>
+   <td style="text-align:left;"> 52128 (48.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Heart rate (beats/min)<sup>1</sup> </td>
+   <td style="text-align:left;"> 5.7 </td>
+   <td style="text-align:left;"> 71.0 [62.0, 81.0], 73.3 (15.2) </td>
+   <td style="text-align:left;"> 6.5 </td>
+   <td style="text-align:left;"> 71.0 [63.0, 81.0], 73.6 (15.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Heart rate (beats/min) &gt;70<sup>1</sup> </td>
+   <td style="text-align:left;"> 5.7 </td>
+   <td style="text-align:left;"> 96462 (50.3) </td>
+   <td style="text-align:left;"> 6.5 </td>
+   <td style="text-align:left;"> 53593 (51.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hb (g/L)<sup>1</sup> </td>
+   <td style="text-align:left;"> 8.2 </td>
+   <td style="text-align:left;"> 132.0 [120.0, 144.0], 132.0 (17.5) </td>
+   <td style="text-align:left;"> 8.3 </td>
+   <td style="text-align:left;"> 131.0 [119.0, 143.0], 130.9 (17.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Anemia<sup>1</sup> </td>
+   <td style="text-align:left;"> 8.2 </td>
+   <td style="text-align:left;"> 65066 (34.8) </td>
+   <td style="text-align:left;"> 8.3 </td>
+   <td style="text-align:left;"> 38167 (37.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Potassium (mmol/L)<sup>1</sup> </td>
+   <td style="text-align:left;"> 18.7 </td>
+   <td style="text-align:left;"> 4.2 [3.9, 4.5], 4.2 (0.4) </td>
+   <td style="text-align:left;"> 19.9 </td>
+   <td style="text-align:left;"> 4.2 [3.9, 4.5], 4.2 (0.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Potassium (mmol/L)<sup>1</sup> </td>
+   <td style="text-align:left;"> 18.7 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 19.9 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     normakalemia </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 153315 (92.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 82889 (92.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     hypokalemia </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 6222 (3.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3898 (4.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     hyperkalemia </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5947 (3.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3270 (3.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sodium (mmol/l)<sup>1</sup> </td>
+   <td style="text-align:left;"> 35.0 </td>
+   <td style="text-align:left;"> 140.0 [138.0, 142.0], 139.8 (3.2) </td>
+   <td style="text-align:left;"> 34.9 </td>
+   <td style="text-align:left;"> 140.0 [138.0, 142.0], 139.8 (3.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Creatinine (µmol/L)<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.0 </td>
+   <td style="text-align:left;"> 97.0 [79.0, 123.0], 108.8 (55.8) </td>
+   <td style="text-align:left;"> 3.2 </td>
+   <td style="text-align:left;"> 97.0 [79.0, 124.0], 110.6 (61.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> eGFR (CKD-EPI 2021) (mL/min/1.73 m²)<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.7 </td>
+   <td style="text-align:left;"> 64.4 [47.0, 83.6], 64.9 (23.5) </td>
+   <td style="text-align:left;"> 3.0 </td>
+   <td style="text-align:left;"> 63.2 [45.4, 82.9], 63.7 (24.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> eGFR (CKD-EPI 2021) (mL/min/1.73 m²) &lt;60<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.7 </td>
+   <td style="text-align:left;"> 86342 (43.6) </td>
+   <td style="text-align:left;"> 3.0 </td>
+   <td style="text-align:left;"> 49579 (45.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NT-proBNP (pg/ml)<sup>1</sup> </td>
+   <td style="text-align:left;"> 43.8 </td>
+   <td style="text-align:left;"> 1975.0 [803.0, 4480.0], 4088.5 (6504.1) </td>
+   <td style="text-align:left;"> 44.3 </td>
+   <td style="text-align:left;"> 2036.0 [803.0, 4829.0], 4443.2 (7213.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BNP (pg/ml)<sup>1</sup> </td>
+   <td style="text-align:left;"> 95.2 </td>
+   <td style="text-align:left;"> 516.0 [199.0, 1205.0], 1009.8 (1518.6) </td>
+   <td style="text-align:left;"> 95.6 </td>
+   <td style="text-align:left;"> 564.5 [212.2, 1297.5], 1073.6 (1626.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Transferrin (%)<sup>1</sup> </td>
+   <td style="text-align:left;"> 90.4 </td>
+   <td style="text-align:left;"> 24.0 [17.0, 33.0], 25.7 (13.0) </td>
+   <td style="text-align:left;"> 89.5 </td>
+   <td style="text-align:left;"> 24.0 [17.0, 32.0], 25.5 (13.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ferritin (µg/l)<sup>1</sup> </td>
+   <td style="text-align:left;"> 88.7 </td>
+   <td style="text-align:left;"> 142.0 [71.0, 262.0], 197.0 (180.6) </td>
+   <td style="text-align:left;"> 87.7 </td>
+   <td style="text-align:left;"> 142.0 [71.0, 264.0], 198.8 (183.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> QRS width (ms)<sup>1</sup> </td>
+   <td style="text-align:left;"> 22.2 </td>
+   <td style="text-align:left;"> 106.0 [92.0, 136.0], 115.0 (30.4) </td>
+   <td style="text-align:left;"> 22.4 </td>
+   <td style="text-align:left;"> 104.0 [90.0, 132.0], 113.5 (30.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Left Bundle Branch Block (LBBB)<sup>1</sup> </td>
+   <td style="text-align:left;"> 21.7 </td>
+   <td style="text-align:left;"> 30023 (18.9) </td>
+   <td style="text-align:left;"> 21.8 </td>
+   <td style="text-align:left;"> 15504 (17.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Loop diuretic IV<sup>1</sup> </td>
+   <td style="text-align:left;"> 82.2 </td>
+   <td style="text-align:left;"> 7321 (20.2) </td>
+   <td style="text-align:left;"> 81.2 </td>
+   <td style="text-align:left;"> 5246 (24.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ferric carboxymaltose IV<sup>1</sup> </td>
+   <td style="text-align:left;"> 59.2 </td>
+   <td style="text-align:left;"> 3906 (4.7) </td>
+   <td style="text-align:left;"> 56.8 </td>
+   <td style="text-align:left;"> 2492 (5.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ferric carboxymaltose IV dose (mg)<sup>1</sup> </td>
+   <td style="text-align:left;"> 98.2 </td>
+   <td style="text-align:left;"> 1000.0 [1000.0, 1000.0], 1009.9 (308.0) </td>
+   <td style="text-align:left;"> 97.9 </td>
+   <td style="text-align:left;"> 1000.0 [1000.0, 1000.0], 1013.9 (312.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Unplanned inotrope support<sup>1</sup> </td>
+   <td style="text-align:left;"> 40.5 </td>
+   <td style="text-align:left;"> 3465 (2.9) </td>
+   <td style="text-align:left;"> 40.0 </td>
+   <td style="text-align:left;"> 1236 (1.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diuretic<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 156349 (77.2) </td>
+   <td style="text-align:left;"> 0.6 </td>
+   <td style="text-align:left;"> 85901 (76.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Loop diuretic<sup>1</sup> </td>
+   <td style="text-align:left;"> 27.6 </td>
+   <td style="text-align:left;"> 107757 (73.2) </td>
+   <td style="text-align:left;"> 27.2 </td>
+   <td style="text-align:left;"> 59771 (73.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Loop diuretic substance<sup>1</sup> </td>
+   <td style="text-align:left;"> 75.2 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 72.6 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Bumetanid </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 338 (0.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 229 (0.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Furosemid </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49975 (98.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 30422 (98.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Toresamid </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 202 (0.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 126 (0.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Loop diuretic dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 54.5 </td>
+   <td style="text-align:left;"> 40.0 [40.0, 80.0], 72.7 (85.4) </td>
+   <td style="text-align:left;"> 54.7 </td>
+   <td style="text-align:left;"> 40.0 [40.0, 80.0], 73.8 (88.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Loop diuretic usage When necessary<sup>1</sup> </td>
+   <td style="text-align:left;"> 47.2 </td>
+   <td style="text-align:left;"> 20732 (19.3) </td>
+   <td style="text-align:left;"> 47.0 </td>
+   <td style="text-align:left;"> 11463 (19.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ACEi<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.4 </td>
+   <td style="text-align:left;"> 103855 (51.2) </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 54795 (49.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ACEi substance<sup>1</sup> </td>
+   <td style="text-align:left;"> 49.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 51.3 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Captopril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 732 (0.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 356 (0.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Cilazapril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 109 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 62 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Enalapril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49674 (47.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 27467 (50.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Fosinopril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 66 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Kinapril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 69 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 32 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Lisinopril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 902 (0.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 458 (0.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Perindopril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Ramipril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 52137 (50.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 26291 (48.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Trandolapril </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 34 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 13 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ACEi dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 49.0 </td>
+   <td style="text-align:left;"> 10.0 [5.0, 15.0], 10.8 (9.9) </td>
+   <td style="text-align:left;"> 51.3 </td>
+   <td style="text-align:left;"> 10.0 [5.0, 15.0], 10.8 (9.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ARB<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:left;"> 59082 (29.3) </td>
+   <td style="text-align:left;"> 1.0 </td>
+   <td style="text-align:left;"> 30895 (27.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ARB substance<sup>1</sup> </td>
+   <td style="text-align:left;"> 71.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 72.5 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Candesartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37538 (63.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 19378 (62.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Eprosartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 18 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Irbesartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1330 (2.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 688 (2.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Losartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17982 (30.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 9775 (31.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Telmisartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 90 (0.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 51 (0.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Valsartan </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2102 (3.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 983 (3.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ARB dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 71.0 </td>
+   <td style="text-align:left;"> 32.0 [12.5, 50.0], 42.1 (50.5) </td>
+   <td style="text-align:left;"> 72.6 </td>
+   <td style="text-align:left;"> 32.0 [16.0, 50.0], 41.9 (49.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ARNi<sup>1</sup> </td>
+   <td style="text-align:left;"> 58.1 </td>
+   <td style="text-align:left;"> 11609 (13.6) </td>
+   <td style="text-align:left;"> 55.7 </td>
+   <td style="text-align:left;"> 6958 (14.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ARNi dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 94.3 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 93.8 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     0/0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 33 (0.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 16 (0.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     121/129 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     122/128 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 67 (0.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 44 (0.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     145/155 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     146/154 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 466 (4.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 275 (4.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     157/168 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     170/180 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     194/206 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5266 (45.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3397 (48.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     195/205 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 16 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     219/231 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     24/26 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 156 (1.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 97 (1.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     243/257 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 19 (0.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     267/283 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 (0.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 6 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     292/308 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     316/334 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     340/360 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     48/52 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1843 (15.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1058 (15.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     49/51 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 146 (1.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 59 (0.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     61/64 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     73/77 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 246 (2.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 151 (2.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     85/90 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     97/103 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 142 (1.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 60 (0.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     98/102 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3147 (27.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1747 (25.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ACEi/ARB/ARNi<sup>1</sup> </td>
+   <td style="text-align:left;"> 1.0 </td>
+   <td style="text-align:left;"> 171013 (84.9) </td>
+   <td style="text-align:left;"> 1.2 </td>
+   <td style="text-align:left;"> 90952 (81.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Beta-blocker<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.3 </td>
+   <td style="text-align:left;"> 178949 (88.3) </td>
+   <td style="text-align:left;"> 0.4 </td>
+   <td style="text-align:left;"> 97324 (86.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Beta-blocker substance<sup>1</sup> </td>
+   <td style="text-align:left;"> 12.1 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 13.5 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Atenolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4075 (2.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2359 (2.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Betaxolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 11 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Bisoprolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 76936 (43.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 41578 (42.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Carvedilol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 6980 (3.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3173 (3.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Labetalol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 30 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 15 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Metoprolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 89730 (50.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49569 (50.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Pindolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 38 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 21 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Propanolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 289 (0.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 172 (0.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Sotalol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 735 (0.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 362 (0.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Timolol </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 76 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 38 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Beta-blocker dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 12.3 </td>
+   <td style="text-align:left;"> 25.0 [7.5, 100.0], 60.7 (68.4) </td>
+   <td style="text-align:left;"> 13.7 </td>
+   <td style="text-align:left;"> 25.0 [7.5, 100.0], 60.9 (68.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MRA<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.6 </td>
+   <td style="text-align:left;"> 78762 (39.0) </td>
+   <td style="text-align:left;"> 0.8 </td>
+   <td style="text-align:left;"> 42246 (37.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MRA substance Spironalakton<sup>1</sup> </td>
+   <td style="text-align:left;"> 75.2 </td>
+   <td style="text-align:left;"> 35446 (70.1) </td>
+   <td style="text-align:left;"> 74.9 </td>
+   <td style="text-align:left;"> 19240 (68.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MRA dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 75.2 </td>
+   <td style="text-align:left;"> 25.0 [25.0, 25.0], 28.4 (13.0) </td>
+   <td style="text-align:left;"> 75.0 </td>
+   <td style="text-align:left;"> 25.0 [25.0, 25.0], 28.6 (13.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Digoxin<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.4 </td>
+   <td style="text-align:left;"> 27079 (13.4) </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 14758 (13.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Platelet inhibitor<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 79272 (39.1) </td>
+   <td style="text-align:left;"> 0.6 </td>
+   <td style="text-align:left;"> 43971 (39.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oral anticoagulant<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.4 </td>
+   <td style="text-align:left;"> 98704 (48.7) </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 52679 (47.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Statin<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.4 </td>
+   <td style="text-align:left;"> 100752 (49.7) </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 52679 (47.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nitrate<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.5 </td>
+   <td style="text-align:left;"> 26262 (13.0) </td>
+   <td style="text-align:left;"> 0.6 </td>
+   <td style="text-align:left;"> 14851 (13.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SGLT2i<sup>1</sup> </td>
+   <td style="text-align:left;"> 94.9 </td>
+   <td style="text-align:left;"> 2185 (20.9) </td>
+   <td style="text-align:left;"> 91.6 </td>
+   <td style="text-align:left;"> 2021 (21.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SGLT2i substance<sup>1</sup> </td>
+   <td style="text-align:left;"> 98.9 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 98.2 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Dapagliflozin </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1540 (70.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1434 (71.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Empagliflozin </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 640 (29.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 583 (28.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Ertugliflozin </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Kanagliflozin </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1 (0.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SGLT2i dose (mg/24h)<sup>1</sup> </td>
+   <td style="text-align:left;"> 98.9 </td>
+   <td style="text-align:left;"> 10.0 [10.0, 10.0], 10.5 (3.6) </td>
+   <td style="text-align:left;"> 98.2 </td>
+   <td style="text-align:left;"> 10.0 [10.0, 10.0], 10.5 (3.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sinus node inhibitor<sup>1</sup> </td>
+   <td style="text-align:left;"> 60.9 </td>
+   <td style="text-align:left;"> 473 (0.6) </td>
+   <td style="text-align:left;"> 57.9 </td>
+   <td style="text-align:left;"> 248 (0.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Device therapy<sup>1</sup> </td>
+   <td style="text-align:left;"> 1.7 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1.4 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     No </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 161396 (80.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 91365 (82.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Pacemaker </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 18854 (9.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 10503 (9.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     CRT-P </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4337 (2.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2145 (1.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     CRT-D </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 7679 (3.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3354 (3.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     ICD </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 7620 (3.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3511 (3.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Device therapy CRT/ICD<sup>1</sup> </td>
+   <td style="text-align:left;"> 1.7 </td>
+   <td style="text-align:left;"> 19636 (9.8) </td>
+   <td style="text-align:left;"> 1.4 </td>
+   <td style="text-align:left;"> 9010 (8.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chest X-ray<sup>1</sup> </td>
+   <td style="text-align:left;"> 35.5 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 37.3 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     No </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 35669 (27.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 18493 (26.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Normal </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 32439 (24.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 17637 (25.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Pulmonary congestion </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 16057 (12.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 9367 (13.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Cardiomegaly </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 22869 (17.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 11693 (16.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Pulmonary congestion &amp; cardiomegaly </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 24178 (18.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 13245 (18.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes<sup>1</sup> </td>
+   <td style="text-align:left;"> 9.6 </td>
+   <td style="text-align:left;"> 33947 (18.5) </td>
+   <td style="text-align:left;"> 10.2 </td>
+   <td style="text-align:left;"> 17450 (17.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes<sup>1</sup> </td>
+   <td style="text-align:left;"> 28.3 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 28.5 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     No </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 116565 (80.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 64944 (80.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Type I </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2212 (1.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1285 (1.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Type II </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 26987 (18.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 14197 (17.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hypertension<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:left;"> 111945 (56.2) </td>
+   <td style="text-align:left;"> 2.3 </td>
+   <td style="text-align:left;"> 62757 (57.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Atrial fibrillation/flutter<sup>1</sup> </td>
+   <td style="text-align:left;"> 0.6 </td>
+   <td style="text-align:left;"> 104878 (51.9) </td>
+   <td style="text-align:left;"> 0.7 </td>
+   <td style="text-align:left;"> 58560 (52.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lung disease<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.0 </td>
+   <td style="text-align:left;"> 34555 (17.3) </td>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:left;"> 19558 (17.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Valve disease<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.5 </td>
+   <td style="text-align:left;"> 39894 (20.3) </td>
+   <td style="text-align:left;"> 3.4 </td>
+   <td style="text-align:left;"> 21989 (20.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dilated cardiomyopathy<sup>1</sup> </td>
+   <td style="text-align:left;"> 4.6 </td>
+   <td style="text-align:left;"> 25052 (12.9) </td>
+   <td style="text-align:left;"> 4.5 </td>
+   <td style="text-align:left;"> 11362 (10.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Revascularization<sup>1</sup> </td>
+   <td style="text-align:left;"> 3.2 </td>
+   <td style="text-align:left;"> 57172 (29.0) </td>
+   <td style="text-align:left;"> 3.0 </td>
+   <td style="text-align:left;"> 29567 (27.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Valve surgery<sup>1</sup> </td>
+   <td style="text-align:left;"> 2.3 </td>
+   <td style="text-align:left;"> 13775 (6.9) </td>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:left;"> 7287 (6.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ECG rythm<sup>1</sup> </td>
+   <td style="text-align:left;"> 6.4 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 7.0 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Sinus </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 96527 (50.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 52806 (50.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Atrial fibrillation </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 69876 (36.7) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 39424 (37.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     PM/Other </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23953 (12.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 12270 (11.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Follow-up referral HF nurse clinic<sup>1</sup> </td>
+   <td style="text-align:left;"> 5.6 </td>
+   <td style="text-align:left;"> 118708 (61.8) </td>
+   <td style="text-align:left;"> 7.1 </td>
+   <td style="text-align:left;"> 55478 (53.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Follow-up referral speciality<sup>1</sup> </td>
+   <td style="text-align:left;"> 4.3 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 5.4 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Hospital </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 124388 (63.9) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 62936 (59.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Primary care </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 64233 (33.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 39314 (37.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Other </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 6000 (3.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 4081 (3.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Follow-up referral speciality Hospital<sup>1</sup> </td>
+   <td style="text-align:left;"> 4.3 </td>
+   <td style="text-align:left;"> 124388 (63.9) </td>
+   <td style="text-align:left;"> 5.4 </td>
+   <td style="text-align:left;"> 62936 (59.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> QoL EQ-5D<sup>1</sup> </td>
+   <td style="text-align:left;"> 68.0 </td>
+   <td style="text-align:left;"> 70.0 [50.0, 80.0], 64.6 (19.8) </td>
+   <td style="text-align:left;"> 68.9 </td>
+   <td style="text-align:left;"> 70.0 [50.0, 80.0], 64.4 (20.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BMI (kg/m²)<sup>1</sup> </td>
+   <td style="text-align:left;"> 32.3 </td>
+   <td style="text-align:left;"> 26.8 [23.7, 30.5], 27.5 (5.7) </td>
+   <td style="text-align:left;"> 37.8 </td>
+   <td style="text-align:left;"> 26.3 [23.3, 30.2], 27.2 (5.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BMI (kg/m²)<sup>1</sup> </td>
+   <td style="text-align:left;"> 11.6 </td>
+   <td style="text-align:left;"> 26.6 [23.5, 30.4], 27.3 (5.7) </td>
+   <td style="text-align:left;"> 12.5 </td>
+   <td style="text-align:left;"> 26.2 [23.1, 30.1], 27.0 (5.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BMI (kg/m²) ≥30<sup>1</sup> </td>
+   <td style="text-align:left;"> 32.3 </td>
+   <td style="text-align:left;"> 38708 (28.1) </td>
+   <td style="text-align:left;"> 37.8 </td>
+   <td style="text-align:left;"> 18390 (26.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BMI (kg/m²) ≥30<sup>1</sup> </td>
+   <td style="text-align:left;"> 11.6 </td>
+   <td style="text-align:left;"> 49383 (27.5) </td>
+   <td style="text-align:left;"> 12.5 </td>
+   <td style="text-align:left;"> 25233 (25.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Atrial fibrillation/flutter<sup>1</sup><sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 118558 (58.3) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 66355 (59.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> IHD<sup>1</sup><sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 111084 (54.6) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 60418 (53.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hypertension<sup>1</sup><sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 135573 (66.6) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 76128 (67.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes<sup>1</sup><sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 56394 (27.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 30527 (27.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Valve disease<sup>1</sup><sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 54508 (26.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 30060 (26.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Country of birth<sup>3</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Sweden </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 173383 (85.2) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 96747 (86.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Europe </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23298 (11.5) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 12179 (10.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Other </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 6744 (3.3) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3498 (3.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Children<sup>3</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 170169 (83.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 94189 (83.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marital status Single/widowed/divorced<sup>3</sup> </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 106312 (52.3) </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 60730 (54.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Family type Living alone<sup>3</sup> </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 98133 (48.3) </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 56517 (50.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Education<sup>3</sup> </td>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Compulsory school </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 86560 (43.4) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 48858 (44.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Secondary school </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 78848 (39.6) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 42666 (38.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     University </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 33825 (17.0) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 18509 (16.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Disposable income (100 SEK)<sup>3</sup> </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 1549.0 [1238.0, 2085.2], 1996.9 (4662.9) </td>
+   <td style="text-align:left;"> 0.1 </td>
+   <td style="text-align:left;"> 1538.0 [1228.0, 2050.0], 1966.1 (2884.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Duration of HF (days)<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 342.0 [18.0, 1880.0], 1257.7 (1821.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 305.0 [15.0, 1736.0], 1203.9 (1800.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sos_timeprevhosphf<sup>2</sup> </td>
+   <td style="text-align:left;"> 40.7 </td>
+   <td style="text-align:left;"> 23.0 [0.0, 301.0], 431.6 (1031.4) </td>
+   <td style="text-align:left;"> 41.2 </td>
+   <td style="text-align:left;"> 21.0 [0.0, 277.0], 413.0 (1009.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Location<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     HF in-patient </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 49054 (24.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 27885 (24.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Other in-patient </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 23989 (11.8) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 15597 (13.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">     Out-patient </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 130385 (64.1) </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 68944 (61.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hypertension<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 116861 (57.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 66119 (58.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Diabetes<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 53895 (26.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 29345 (26.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ischemic heart disease<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 108844 (53.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 59258 (52.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myocardial infarction<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 79760 (39.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 43280 (38.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angina pectoris<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 40721 (20.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 21789 (19.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PCI<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 41182 (20.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 21635 (19.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CABG<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 55122 (27.1) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 28581 (25.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dilated cardiomyopathy<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 21962 (10.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 9902 (8.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Peripheral artery disease<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 18391 (9.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 10652 (9.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Atrial fibrillation/flutter<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 109925 (54.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 61758 (54.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Stroke<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 29914 (14.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 17592 (15.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TIA<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 6973 (3.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 4026 (3.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Stroke/TIA<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 34258 (16.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 20069 (17.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Valvular disease<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 41653 (20.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 23343 (20.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Renal failure<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 31190 (15.3) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 18518 (16.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hyperkalemia<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 4207 (2.1) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2423 (2.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hypokalemia<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 5035 (2.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3104 (2.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dialysis<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 1795 (0.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 1078 (1.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> COPD<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 27752 (13.6) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 15758 (14.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liver disease<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 4561 (2.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2514 (2.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Obstructive sleep apnea<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 9421 (4.6) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 4821 (4.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dementia<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3541 (1.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2753 (2.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Depression<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 7563 (3.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 4375 (3.9) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malignant cancer<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 25466 (12.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 14729 (13.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Muscoloskeletal/connective tissue diseases <sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 65046 (32.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 36586 (32.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcohol abuse<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 6486 (3.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3607 (3.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Severe bleeding<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 38039 (18.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 22294 (19.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Charlson comorbidity Index<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3.0 [1.0, 4.0], 3.2 (2.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3.0 [1.0, 4.0], 3.3 (2.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Heart failure hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 78081 (38.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 32596 (29.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Number of heart failure hospitalizations<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 0.0 [0.0, 1.0], 1.1 (3.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 0.0 [0.0, 1.0], 0.6 (1.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Any hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 154397 (75.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 80520 (71.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CV hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 112786 (55.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 53721 (47.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Non-CV hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 122978 (60.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 63799 (56.7) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Stroke/TIA hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 16164 (7.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 8495 (7.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myocardial infarction hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 12647 (6.2) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 6134 (5.5) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ischemic heart disease hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 24304 (11.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 10834 (9.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ventricular fibrillation/tachycardia hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3953 (1.9) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 1329 (1.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pneumonia/Flue/Respiratory infection hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 28149 (13.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 13826 (12.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pneumonia hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 26420 (13.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 13073 (11.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Renal Failure hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 13711 (6.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 6535 (5.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malignant cancer hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 14449 (7.1) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 8065 (7.2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Severe bleeding hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 32475 (16.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 16418 (14.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hyperkalemia hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 1715 (0.8) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 689 (0.6) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hypokalemia hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 816 (0.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 324 (0.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Syncope hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 6094 (3.0) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 2707 (2.4) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trauma hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 27837 (13.7) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 14577 (13.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Coronary revascularization<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 8998 (4.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 3722 (3.3) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Death<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 109080 (53.6) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 62927 (56.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CV death<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 66132 (32.5) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 37110 (33.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Non-CV death<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 42946 (21.1) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 25815 (23.0) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hospitalization or death Sudden cardiac death<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 110 (0.1) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 60 (0.1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Composite CVD/HFH<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 104428 (51.3) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 52590 (46.8) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Composite Death/HFH<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 128880 (63.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 70327 (62.6) </td>
+  </tr>
+</tbody>
+<tfoot>
+<tr><td style="padding: 0; " colspan="100%"><span style="font-style: italic;">Note: </span></td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> Posts/patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> % missing is for cases (SwedeHF patients) only.</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> Categorical variables are presented with n (%) and continuous variables with median [q1-q3], mean (sd).</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup>1</sup> Source: SwedeHF</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup>2</sup> Source: NPR</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup>3</sup> Source: SCB</td></tr>
+</tfoot>
+</table>

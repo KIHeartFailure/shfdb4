@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | SHFDB4</title>
+    <link>https://kiheartfailure.github.io/shfdb4/authors/</link>
+      <atom:link href="https://kiheartfailure.github.io/shfdb4/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Lina Benson</copyright>
+    <image>
+      <url>https://kiheartfailure.github.io/shfdb4/img/headers/tree.jpg</url>
+      <title>Authors</title>
+      <link>https://kiheartfailure.github.io/shfdb4/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>https://kiheartfailure.github.io/shfdb4/authors/shfdb4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/authors/shfdb4/</guid>
+      <description>&lt;p&gt;A Heart Failure cohort from Sweden 2000 - 2021. The population consists of 1) patients registered in SwedeHF, 2) recorded in the National Patient Register with a ICD-10 code in main position for HF and 3) gender, year of birth and county of residence matched HF-free controls.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

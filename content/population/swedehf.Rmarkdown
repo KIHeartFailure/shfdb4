@@ -1,0 +1,32 @@
+---
+title: 'Patients registered in SwedeHF'
+headless: true  # This file represents a page section.
+active: true  # Activate this widget? true/false
+weight: 10  # Order that this section will appear in.
+output:
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+load(file = "C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/data/rsdata_for_webb.RData") 
+```             
+
+```{r flow}
+flow <- flow %>% as_tibble
+colnames(flow) <- c("Inclusion/exclusion criteria", "N")
+kable(flow)
+```

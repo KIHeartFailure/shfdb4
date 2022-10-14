@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories | SHFDB4</title>
+    <link>https://kiheartfailure.github.io/shfdb4/categories/</link>
+      <atom:link href="https://kiheartfailure.github.io/shfdb4/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Lina Benson</copyright>
+    <image>
+      <url>https://kiheartfailure.github.io/shfdb4/img/headers/tree.jpg</url>
+      <title>Categories</title>
+      <link>https://kiheartfailure.github.io/shfdb4/categories/</link>
+    </image>
+    
+  </channel>
+</rss>

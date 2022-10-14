@@ -1,0 +1,50 @@
+---
+title: 'Comorbidities and outcomes'
+widget: "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless: true  # This file represents a page section.
+active: true  # Activate this widget? true/false
+weight: 40  # Order that this section will appear in.
+output:
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+load(file = "C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/data/rsdata_for_webb.RData") 
+```             
+
+For all comorbidities and hospitalizations from the NPR date of admission/visit (INDATUM) is used to calculate if it is a comorbidity or outcome. Adjoining hospitalizations, where the discharge date of the former hospitalization is the same as the admission date of the latter, are merged together into one hospitalization in order to take into account possible transferrals between wards/hospitals.
+
+Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see [Data Sources](www.shfdb4/datasources/))).
+
+Limitation: Out-patient visits in speciality (but not primary) care are covered from 2001. Therefore, for the earlier visits, these are (partially) not included in the comorbidities.
+
+```{r comhospdeath}
+comoutmeta <- rbind(outcommeta, deathmeta)
+comoutmeta <- comoutmeta %>%
+  mutate(Code = gsub(",", ", ", Code),
+         Position = gsub("DIA_all", "All DIA", Position),
+         Position = gsub("OP_all", "All OP", Position),
+         Position = gsub("ekod_all", "All Ekod", Position),
+         Position = gsub("sos_deathcause", "ULORSAK", Position),
+         Period = gsub("0--1826.25", "-5yrs-0", Period), 
+         Period = gsub("0--1095.75", "-3yrs-0", Period),
+         Period = gsub("0-", "-0", Period),
+         Register = ifelse(stringr::str_detect(Variable, "sos_out_hosp"), "NPR (in)", Register)
+         )
+
+kable(comoutmeta)
+```

@@ -1,0 +1,38 @@
+---
+title: 'Charlson comorbidity index'
+widget: "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless: true  # This file represents a page section.
+active: true  # Activate this widget? true/false
+weight: 50  # Order that this section will appear in.
+output:
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+load(file = "C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/data/rsdata_for_webb.RData") 
+```             
+
+The ICD-9/10 codes used are not necessarily the same as in the other comorbidities and outcomes but 
+from https://www.dovepress.com/articles.php?article_id=61144. 
+
+```{r cci}
+ccimeta <- ccimeta %>%
+  mutate(Code = gsub(",", ", ", Code),
+         Position = gsub("DIA_all", "All DIA", Position),
+         Period = gsub("0--3652.5", "-10yrs-0", Period))
+kable(ccimeta)
+```

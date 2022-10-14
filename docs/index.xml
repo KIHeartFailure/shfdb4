@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SHFDB4</title>
+    <link>https://kiheartfailure.github.io/shfdb4/</link>
+      <atom:link href="https://kiheartfailure.github.io/shfdb4/index.xml" rel="self" type="application/rss+xml" />
+    <description>SHFDB4</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Lina Benson</copyright>
+    <image>
+      <url>https://kiheartfailure.github.io/shfdb4/img/headers/tree.jpg</url>
+      <title>SHFDB4</title>
+      <link>https://kiheartfailure.github.io/shfdb4/</link>
+    </image>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://kiheartfailure.github.io/shfdb4/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data sources</title>
+      <link>https://kiheartfailure.github.io/shfdb4/datasources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/datasources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Definitions</title>
+      <link>https://kiheartfailure.github.io/shfdb4/definitions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/definitions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Overview</title>
+      <link>https://kiheartfailure.github.io/shfdb4/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/overview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Population</title>
+      <link>https://kiheartfailure.github.io/shfdb4/population/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/population/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Versions</title>
+      <link>https://kiheartfailure.github.io/shfdb4/versions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kiheartfailure.github.io/shfdb4/versions/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
