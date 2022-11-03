@@ -36,4 +36,4 @@ title = "Patients with HF from the National Patient Register"
  css_style = ""
 +++
 
-Patients with an ICD-10 code for HF in main position in the National Patient Register (ICD-10: I110, I130, I132, I255, I420, I423, 1425-9, I43, I50, J81, K761, R57). 
+Patients with an ICD-10 code for HF in main position in the National Patient Register (ICD-10: I110, I130, I132, I255, I420, I423, 1425-9, I43, I50, J81, K761, R570). 

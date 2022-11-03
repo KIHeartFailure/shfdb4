@@ -1,5 +1,6 @@
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 load("../dm/data/rsdata_for_webb.RData")
 
@@ -89,4 +90,4 @@ for (i in seq_along(varsfortab)) {
 
 names(shinydata) <- varsfortab
 
-save(file = "./deskstatforshiny/data/data.RData", list = c("varsfortab", "shinydata"))
+save(file = "./deskstatshfdb4/data/data.RData", list = c("varsfortab", "shinydata"))
