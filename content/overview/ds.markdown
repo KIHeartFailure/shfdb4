@@ -437,7 +437,7 @@ output:
    <td style="text-align:left;"> 53593 (51.0) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Hb (g/L)<sup>1</sup> </td>
+   <td style="text-align:left;"> Hemoglobin (g/L)<sup>1</sup> </td>
    <td style="text-align:left;"> 8.2 </td>
    <td style="text-align:left;"> 132.0 [120.0, 144.0], 132.0 (17.5) </td>
    <td style="text-align:left;"> 8.3 </td>
@@ -1711,7 +1711,7 @@ output:
    <td style="text-align:left;"> 23343 (20.8) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Renal failure<sup>2</sup> </td>
+   <td style="text-align:left;"> Kidney disease<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 31190 (15.3) </td>
    <td style="text-align:left;"> 0.0 </td>
@@ -1774,14 +1774,14 @@ output:
    <td style="text-align:left;"> 4375 (3.9) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Malignant cancer<sup>2</sup> </td>
+   <td style="text-align:left;"> Malignant cancer within 3 years<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 25466 (12.5) </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 14729 (13.1) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Muscoloskeletal/connective tissue diseases <sup>2</sup> </td>
+   <td style="text-align:left;"> Muscoloskeletal/connective tissue diseases within 3 years<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 65046 (32.0) </td>
    <td style="text-align:left;"> 0.0 </td>
@@ -1886,7 +1886,7 @@ output:
    <td style="text-align:left;"> 13073 (11.6) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Renal Failure hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> Kidney disease hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 13711 (6.7) </td>
    <td style="text-align:left;"> 0.0 </td>
