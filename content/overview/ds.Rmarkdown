@@ -157,7 +157,7 @@ taball <- taball %>%
   select(Variable, Missing...2:Overall...5)
 
 
-colnames(taball) <- c("Variable", rep(c("% missing", "Case"), 2))
+colnames(taball) <- c("Variable", rep(c("% missing", "SwedeHF"), 2))
 
 footnote(knitr::kable(taball, row.names = F, escape = FALSE) %>%
   add_header_above(c(" " = 1, "Posts" = 2, "Patients (last post)" = 2)),
