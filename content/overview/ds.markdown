@@ -1482,9 +1482,9 @@ output:
   <tr>
    <td style="text-align:left;"> Valve disease<sup>1</sup><sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 54508 (26.8) </td>
+   <td style="text-align:left;"> 54514 (26.8) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 30060 (26.7) </td>
+   <td style="text-align:left;"> 30062 (26.7) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Country of birth<sup>3</sup> </td>
@@ -1573,14 +1573,14 @@ output:
   <tr>
    <td style="text-align:left;"> Duration of HF (days)<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 342.0 [18.0, 1880.0], 1257.7 (1821.9) </td>
+   <td style="text-align:left;"> 341.0 [18.0, 1876.0], 1256.3 (1821.7) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 305.0 [15.0, 1736.0], 1203.9 (1800.9) </td>
+   <td style="text-align:left;"> 303.0 [15.0, 1732.0], 1202.2 (1800.5) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sos_timeprevhosphf<sup>2</sup> </td>
    <td style="text-align:left;"> 40.7 </td>
-   <td style="text-align:left;"> 23.0 [0.0, 301.0], 431.6 (1031.4) </td>
+   <td style="text-align:left;"> 23.0 [0.0, 300.0], 431.6 (1031.5) </td>
    <td style="text-align:left;"> 41.2 </td>
    <td style="text-align:left;"> 21.0 [0.0, 277.0], 413.0 (1009.7) </td>
   </tr>
@@ -1594,16 +1594,16 @@ output:
   <tr>
    <td style="text-align:left;">     HF in-patient </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> 49054 (24.1) </td>
+   <td style="text-align:left;"> 49048 (24.1) </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> 27885 (24.8) </td>
+   <td style="text-align:left;"> 27880 (24.8) </td>
   </tr>
   <tr>
    <td style="text-align:left;">     Other in-patient </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> 23989 (11.8) </td>
+   <td style="text-align:left;"> 23995 (11.8) </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> 15597 (13.9) </td>
+   <td style="text-align:left;"> 15602 (13.9) </td>
   </tr>
   <tr>
    <td style="text-align:left;">     Out-patient </td>
@@ -1706,12 +1706,12 @@ output:
   <tr>
    <td style="text-align:left;"> Valvular disease<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 41653 (20.5) </td>
+   <td style="text-align:left;"> 41664 (20.5) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 23343 (20.8) </td>
+   <td style="text-align:left;"> 23346 (20.8) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Kidney disease<sup>2</sup> </td>
+   <td style="text-align:left;"> Renal failure<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 31190 (15.3) </td>
    <td style="text-align:left;"> 0.0 </td>
@@ -1746,6 +1746,13 @@ output:
    <td style="text-align:left;"> 15758 (14.0) </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> Pneumonia/Flue/Respiratory infection<sup>2</sup> </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 72093 (35.4) </td>
+   <td style="text-align:left;"> 0.0 </td>
+   <td style="text-align:left;"> 41105 (36.6) </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> Liver disease<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 4561 (2.2) </td>
@@ -1762,9 +1769,9 @@ output:
   <tr>
    <td style="text-align:left;"> Dementia<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 3541 (1.7) </td>
+   <td style="text-align:left;"> 3576 (1.8) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 2753 (2.4) </td>
+   <td style="text-align:left;"> 2775 (2.5) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Depression<sup>2</sup> </td>
@@ -1811,9 +1818,9 @@ output:
   <tr>
    <td style="text-align:left;"> Heart failure hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 78081 (38.4) </td>
+   <td style="text-align:left;"> 77994 (38.3) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 32596 (29.0) </td>
+   <td style="text-align:left;"> 32532 (28.9) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Number of heart failure hospitalizations<sup>2</sup> </td>
@@ -1832,16 +1839,16 @@ output:
   <tr>
    <td style="text-align:left;"> CV hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 112786 (55.4) </td>
+   <td style="text-align:left;"> 112733 (55.4) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 53721 (47.8) </td>
+   <td style="text-align:left;"> 53678 (47.7) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Non-CV hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 122978 (60.5) </td>
+   <td style="text-align:left;"> 123023 (60.5) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 63799 (56.7) </td>
+   <td style="text-align:left;"> 63825 (56.8) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Stroke/TIA hospitalization<sup>2</sup> </td>
@@ -1874,9 +1881,9 @@ output:
   <tr>
    <td style="text-align:left;"> Pneumonia/Flue/Respiratory infection hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 28149 (13.8) </td>
+   <td style="text-align:left;"> 39431 (19.4) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 13826 (12.3) </td>
+   <td style="text-align:left;"> 19651 (17.5) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Pneumonia hospitalization<sup>2</sup> </td>
@@ -1886,7 +1893,7 @@ output:
    <td style="text-align:left;"> 13073 (11.6) </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Kidney disease hospitalization<sup>2</sup> </td>
+   <td style="text-align:left;"> Renal failure hospitalization<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
    <td style="text-align:left;"> 13711 (6.7) </td>
    <td style="text-align:left;"> 0.0 </td>
@@ -1951,16 +1958,16 @@ output:
   <tr>
    <td style="text-align:left;"> CV death<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 66132 (32.5) </td>
+   <td style="text-align:left;"> 66071 (32.5) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 37110 (33.0) </td>
+   <td style="text-align:left;"> 37068 (33.0) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Non-CV death<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 42946 (21.1) </td>
+   <td style="text-align:left;"> 43009 (21.1) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 25815 (23.0) </td>
+   <td style="text-align:left;"> 25859 (23.0) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Hospitalization or death Sudden cardiac death<sup>2</sup> </td>
@@ -1972,16 +1979,16 @@ output:
   <tr>
    <td style="text-align:left;"> Composite CVD/HFH<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 104428 (51.3) </td>
+   <td style="text-align:left;"> 104342 (51.3) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 52590 (46.8) </td>
+   <td style="text-align:left;"> 52529 (46.7) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Composite Death/HFH<sup>2</sup> </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 128880 (63.4) </td>
+   <td style="text-align:left;"> 128870 (63.3) </td>
    <td style="text-align:left;"> 0.0 </td>
-   <td style="text-align:left;"> 70327 (62.6) </td>
+   <td style="text-align:left;"> 70322 (62.5) </td>
   </tr>
 </tbody>
 <tfoot>

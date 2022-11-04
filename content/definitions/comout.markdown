@@ -115,13 +115,13 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_com_valvular </td>
-   <td style="text-align:left;"> ICD:I05-8, I34-9, Q22, Q230-3, Z952-4 </td>
+   <td style="text-align:left;"> ICD:I05-8, I34-9, Q22, Q230-3, Q230-3, Q235-9, Z952-4 </td>
    <td style="text-align:left;"> NPR (in+out) </td>
    <td style="text-align:left;"> All DIA </td>
    <td style="text-align:left;"> -5yrs-0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> sos_com_kidney </td>
+   <td style="text-align:left;"> sos_com_renal </td>
    <td style="text-align:left;"> ICD:N17-9, Z491, Z492 OP:KAS00, KAS10, KAS20, DR014, DR015, DR016, DR020, DR012, DR013, DR023, DR024, TJA33, TJA35 </td>
    <td style="text-align:left;"> NPR (in+out) </td>
    <td style="text-align:left;"> All DIA All OP </td>
@@ -156,6 +156,13 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
    <td style="text-align:left;"> -5yrs-0 </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> sos_com_respiratory </td>
+   <td style="text-align:left;"> ICD:J </td>
+   <td style="text-align:left;"> NPR (in+out) </td>
+   <td style="text-align:left;"> All DIA </td>
+   <td style="text-align:left;"> -5yrs-0 </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> sos_com_liver </td>
    <td style="text-align:left;"> ICD:B18, I85, I864, I982, K70, K710, K711, K713-7, K72-4, K760, K762-9 </td>
    <td style="text-align:left;"> NPR (in+out) </td>
@@ -171,7 +178,7 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_com_dementia </td>
-   <td style="text-align:left;"> ICD:F00-4 </td>
+   <td style="text-align:left;"> ICD:F00-4, R54 </td>
    <td style="text-align:left;"> NPR (in+out) </td>
    <td style="text-align:left;"> All DIA </td>
    <td style="text-align:left;"> -5yrs-0 </td>
@@ -213,14 +220,14 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_hosphf </td>
-   <td style="text-align:left;"> ICD:I110, I130, I132, I255, I420, I423, I425, I426, I427, I428, I429, I43, I50, J81, K761, R57, 414W, 425E, 425F, 425G, 425H, 425W, 425X, 428 </td>
+   <td style="text-align:left;"> ICD:I110, I130, I132, I255, I420, I423, I425, I426, I427, I428, I429, I43, I50, J81, K761, R570, 414W, 425E, 425F, 425G, 425H, 425W, 425X, 428 </td>
    <td style="text-align:left;"> NPR (in) </td>
    <td style="text-align:left;"> HDIA </td>
    <td style="text-align:left;"> 1- </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_counthosphf </td>
-   <td style="text-align:left;"> ICD:I110, I130, I132, I255, I420, I423, I425, I426, I427, I428, I429, I43, I50, J81, K761, R57, 414W, 425E, 425F, 425G, 425H, 425W, 425X, 428 </td>
+   <td style="text-align:left;"> ICD:I110, I130, I132, I255, I420, I423, I425, I426, I427, I428, I429, I43, I50, J81, K761, R570, 414W, 425E, 425F, 425G, 425H, 425W, 425X, 428 </td>
    <td style="text-align:left;"> NPR (in+out) </td>
    <td style="text-align:left;"> HDIA </td>
    <td style="text-align:left;"> 1- </td>
@@ -234,14 +241,14 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_hospcv </td>
-   <td style="text-align:left;"> ICD:I, J81, K761, G45, R57 </td>
+   <td style="text-align:left;"> ICD:I, J81, K761, G45, R570 </td>
    <td style="text-align:left;"> NPR (in) </td>
    <td style="text-align:left;"> HDIA </td>
    <td style="text-align:left;"> 1- </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_hospnoncv </td>
-   <td style="text-align:left;"> ICD:Not I, J81, K761, G45, R57 </td>
+   <td style="text-align:left;"> ICD:Not I, J81, K761, G45, R570 </td>
    <td style="text-align:left;"> NPR (in) </td>
    <td style="text-align:left;"> HDIA </td>
    <td style="text-align:left;"> 1- </td>
@@ -283,7 +290,7 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_hosprespiratory </td>
-   <td style="text-align:left;"> ICD:J00-6, J09, J10-8 </td>
+   <td style="text-align:left;"> ICD:J </td>
    <td style="text-align:left;"> NPR (in) </td>
    <td style="text-align:left;"> HDIA </td>
    <td style="text-align:left;"> 1- </td>
@@ -296,7 +303,7 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
    <td style="text-align:left;"> 1- </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> sos_out_hospkidney </td>
+   <td style="text-align:left;"> sos_out_hosprenal </td>
    <td style="text-align:left;"> ICD:N17-9, KAS00, KAS10, KAS20, Z491, Z492 OP:DR014, DR015, DR016, DR020, DR012, DR013, DR023, DR024, TJA33, TJA35 </td>
    <td style="text-align:left;"> NPR (in) </td>
    <td style="text-align:left;"> HDIA All OP </td>
@@ -353,14 +360,7 @@ Limitation: Out-patient visits in speciality (but not primary) care are covered 
   </tr>
   <tr>
    <td style="text-align:left;"> sos_out_deathcv </td>
-   <td style="text-align:left;"> ICD:I, J81, K761, R57, G45 </td>
-   <td style="text-align:left;"> Cause of Death </td>
-   <td style="text-align:left;"> ULORSAK </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> sos_out_deathnoncv </td>
-   <td style="text-align:left;"> ICD:A-F, G (excl. 45), H, J (excl. 81), K (excl. 761), L-Q, R (excl. 57), S-Z </td>
+   <td style="text-align:left;"> ICD:I, J81, K761, R570, G45 </td>
    <td style="text-align:left;"> Cause of Death </td>
    <td style="text-align:left;"> ULORSAK </td>
    <td style="text-align:left;">  </td>
