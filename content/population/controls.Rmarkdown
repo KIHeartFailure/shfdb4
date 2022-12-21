@@ -33,7 +33,8 @@ The selection of controls was performed without replacement.
 
 A control was allowed to become a case after the year of the index date for the case.
 
+A full set of controls (n = 2) was not found for all cases:
+
 ```{r ncon}
-#A full set of controls (n = 2) was not found for all cases in SwedeHF:
-#kable(ncontrols)
+kable(ncontrols)
 ```

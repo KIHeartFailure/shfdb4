@@ -38,88 +38,58 @@ tabvars <- names(rsdata)[str_detect(names(rsdata),
 
 tabfunc <- function(data) {
   # median
-  tabmed <- print(CreateTableOne(
-    data = data,
-    vars = tabvars
-  ),
-  varLabels = TRUE, missing = TRUE, printToggle = FALSE, test = FALSE,
-  catDigits = 1, contDigits = 1,
-  nonnormal = tabvars,
-  explain = FALSE,
-  noSpaces = TRUE
+  tabmed <- print(
+    CreateTableOne(
+      data = data,
+      vars = tabvars,
+      strata = "casecontrol"
+    ),
+    varLabels = TRUE, missing = TRUE, printToggle = FALSE, test = FALSE,
+    catDigits = 1, contDigits = 1,
+    nonnormal = tabvars,
+    explain = FALSE,
+    noSpaces = TRUE
   )
   tabmed <- as_tibble(cbind(var = rownames(tabmed), tabmed))
-
-  # mean sd
-  tabmean <- print(CreateTableOne(
-    data = data,
-    vars = tabvars
-  ),
-  varLabels = TRUE, printToggle = FALSE, test = FALSE,
-  catDigits = 1, contDigits = 1,
-  explain = FALSE,
-  noSpaces = TRUE
-  )
-  tabmean <- as_tibble(cbind(var = rownames(tabmean), tabmean))
-
-  ### together
-  tab <- bind_cols(tabmed, tabmean %>% select(Overall), quiet = T)
-  tab <- tab %>%
-    mutate(
-      cont = grepl("[", Overall...2, fixed = TRUE),
-      Overall = if_else(cont, paste0(Overall...2, ", ", Overall...4), Overall...2)
-    ) %>%
-    select(var, Missing, Overall)
-  return(tab)
+  return(tabmed)
 }
 
 # Posts
-## Cases
-# tabcases <- tabfunc(data = rsdata %>% filter(casecontrol == "Case SwedeHF"))
-tabcases <- tabfunc(data = rsdata)
-## controls
-# tabcontrols <- tabfunc(rsdata %>% filter(casecontrol == "Control"))
+tab <- tabfunc(data = rsdata)
+tabcasesswedehf <- tabfunc(data = rsdata %>% filter(casecontrol == "Case SwedeHF"))
 
 # Unique individuals
 rsdatau <- rsdata %>%
-  # filter(casecontrol == "Case") %>%
+  filter(casecontrol == "Case SwedeHF") %>%
   group_by(lopnr) %>%
   arrange(shf_indexdtm) %>%
   slice(n()) %>%
   ungroup()
-# rsdataucon <- inner_join(rsdatau %>% select(LopNrcase, shf_indexdtm),
-#  rsdata %>% filter(casecontrol == "Control"),
-#  by = c("LopNrcase", "shf_indexdtm")
-# )
-# rsdatauboth <- bind_rows(rsdatau, rsdataucon)
-rsdatauboth <- rsdatau
 
 ## Cases
-tabucases <- tabfunc(rsdatauboth)
-# tabucases <- tabfunc(rsdatauboth %>% filter(casecontrol == "Case"))
+tabucases <- tabfunc(rsdatau)
 
-## Controls
-# tabucontrols <- tabfunc(rsdatauboth %>% filter(casecontrol == "Control"))
-
-# tabboth <- full_join(tabcases, tabcontrols %>% select(-Missing), by = "vars")
-# tabuboth <- full_join(tabucases, tabucontrols %>% select(-Missing), by = "vars")
-taball <- bind_cols(tabcases, tabucases %>% select(-var))
+taball <- bind_cols(
+  tabucases %>% select(var, Missing, "Case SwedeHF"),
+  tabcasesswedehf %>% select(Missing, "Case SwedeHF"),
+  tab %>% select(-var, -Missing, -"Case SwedeHF")
+)
 
 taball <- taball %>%
   # remove = Yes
   mutate(across(everything(), str_replace_all, fixed(" = Yes"), "")) %>%
+  mutate(across(everything(), str_replace_all, fixed("0 (NaN)"), "")) %>%
+  mutate(across(everything(), str_replace_all, fixed("NA [NA, NA]"), "")) %>%
   # to get labs and units in place
   mutate(
     var_tmp = str_split(var, " = ", simplify = TRUE)[, 1],
-    val_tmp = str_split(var, " = ", simplify = TRUE)[, 2],
-    # if recoding or categorizing will still get org label
-    var_tmp2 = str_replace_all(var_tmp, "(_cat2|_cat)", "")
+    val_tmp = str_split(var, " = ", simplify = TRUE)[, 2]
   )
 
 taball <- left_join(taball,
   meta %>%
     select(variable, label, unit),
-  by = c("var_tmp2" = "variable")
+  by = c("var_tmp" = "variable")
 ) %>%
   mutate(
     Variable = coalesce(label, var_tmp),
@@ -154,22 +124,21 @@ taball <- taball %>%
     # Variable <- str_replace(Variable, fixed("  "), "&nbsp;&nbsp;&nbsp;&nbsp;")
     # Variable = sub("  ", "&nbsp", Variable)
   ) %>%
-  select(Variable, Missing...2:Overall...5)
+  select(Variable, Missing...2:"Control NPR")
 
+colnames(taball) <- c("Variable", rep(c("% missing", "SwedeHF"), 2), "Case NPR", "Control SwedeHF", "Control NPR")
 
-colnames(taball) <- c("Variable", rep(c("% missing", "SwedeHF"), 2))
-
-footnote(knitr::kable(taball, row.names = F, escape = FALSE) %>%
-  add_header_above(c(" " = 1, "Posts" = 2, "Patients (last post)" = 2)),
-general = c(
-  "Posts/patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.",
-  "% missing is for cases (SwedeHF patients) only.",
-  "Categorical variables are presented with n (%) and continuous variables with median [q1-q3], mean (sd)."
-),
-number = c(
-  "Source: SwedeHF",
-  "Source: NPR",
-  "Source: SCB"
-), escape = FALSE
+footnote(
+  knitr::kable(taball, row.names = F, escape = FALSE) %>%
+    add_header_above(c(" " = 1, "Patients (last post)" = 2, "Posts" = 2, " " = 1, " " = 1, " " = 1)),
+  general = c(
+    "Patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.",
+    "Categorical variables are presented with n (%) and continuous variables with median [q1-q3]."
+  ),
+  number = c(
+    "Source: SwedeHF",
+    "Source: NPR",
+    "Source: SCB"
+  ), escape = FALSE
 )
 ```

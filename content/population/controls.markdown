@@ -19,4 +19,53 @@ The selection of controls was performed without replacement.
 
 A control was allowed to become a case after the year of the index date for the case.
 
+A full set of controls (n = 2) was not found for all cases:
 
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Population </th>
+   <th style="text-align:right;"> No controls </th>
+   <th style="text-align:right;"> Posts </th>
+   <th style="text-align:right;"> Unique patients </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Case SwedeHF </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3662 </td>
+   <td style="text-align:right;"> 2034 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Case SwedeHF </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 16640 </td>
+   <td style="text-align:right;"> 7019 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Case SwedeHF </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 183126 </td>
+   <td style="text-align:right;"> 103373 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Case NPR </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 18925 </td>
+   <td style="text-align:right;"> 18925 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Case NPR </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 26297 </td>
+   <td style="text-align:right;"> 26297 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Case NPR </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 377927 </td>
+   <td style="text-align:right;"> 377927 </td>
+  </tr>
+</tbody>
+</table>

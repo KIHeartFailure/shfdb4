@@ -37,4 +37,4 @@ title = "Index date"
 +++
 
 Index date is defined as the registered date of discharge for in-patients and date of admission for out-patients in SwedeHF. 
-For the patients identified through the National Patient Register with ICD codes the index date is defined as the first occurrence of a diagnosis of HF in main position.The controls receive the same index date as their matched case.
+For the patients identified through the National Patient Register with ICD codes the index date is defined as the first occurrence of a diagnosis of HF in main position. The controls receive the same index date as their matched case.
