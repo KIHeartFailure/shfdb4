@@ -6,7 +6,7 @@ load("../dm/data/rsdata_for_webb.RData")
 
 # create datasets for shinyapp
 varsfortab <- names(rsdata)[str_detect(names(rsdata),
-                                    "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm",
+                                    "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm|shf_aceisub|shf_arbsub|shf_arnidose|shf_bblsub|shf_mrasub|shf_sglt2sub",
                                     negate = T
 )]
 rsdata <- rsdata %>%

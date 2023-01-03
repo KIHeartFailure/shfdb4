@@ -32,7 +32,7 @@ meta <- read.xlsx("C:/Users/Lina/STATISTIK/Projects/20210525_shfdb4/dm/metadata/
 
 ```{r tab}
 tabvars <- names(rsdata)[str_detect(names(rsdata),
-  "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm",
+  "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm|shf_aceisub|shf_arbsub|shf_arnidose|shf_bblsub|shf_mrasub|shf_sglt2sub",
   negate = T
 )]
 
