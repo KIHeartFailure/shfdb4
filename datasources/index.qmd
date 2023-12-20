@@ -1,0 +1,93 @@
+---
+title: Data Sources
+---
+
+## The Swedish Heart Failure Registry (SwedeHF)
+
+The Swedish Heart Failure Registry (SwedeHF) (Swedish: RiksSvikt) is managed by Uppsala Clinical Research Center (UCR).
+
+SwedeHF is a health quality and research registry that started in 2000 and became nationwide 2003. In 2021 31.5% of the prevalent heart failure population in Sweden were at some point registered in SwedeHF. Coverage is lower in primary care but few patients are seen exclusively in primary care and are therefore caught and registered in cardiology or internal medicine.
+
+Up until April 2017 the only inclusion criterion was clinician-judged Heart Failure (HF). From April 2017 the inclusion criteria are ICD-10: I50.0, I50.1, I50.9, I42.0, I42.6, I42.7, I25.5, I11.0, I13.0, I13.2.
+
+The new version of SwedeHF also entailed other differences, mainly how data is collected. Previously there were no restrictions of what visits could be registered. In the new SwedeHF an index visits (the first time a patient is registered into SwedeHF) is registered and thereafter a follow-up visit within 6 months and thereafter yearly follow-ups. The yearly follow-ups can be either out-patient visits, telephone contact or survey. Only the first visit can be a hospitalization, this means that the proportion of hospitalized patients have decreased since April 2017.
+
+For more information, see [https://www.ucr.uu.se/rikssvikt-en/](https://www.ucr.uu.se/rikssvikt-en/) and [https://pubmed.ncbi.nlm.nih.gov/30092697/](https://pubmed.ncbi.nlm.nih.gov/30092697/).
+
+----
+
+## Longitudinal integrated database for health insurance and labour market studies (LISA)
+
+The Longitudinal database on socio-economic factors (LISA) is managed by Statistics Sweden (SCB). Information on socio-economic factors (education, income, civil status) is received from LISA.
+
+For more information, see LISA and [https://pubmed.ncbi.nlm.nih.gov/30929112/](https://pubmed.ncbi.nlm.nih.gov/30929112/).
+
+----
+
+## Register of the Total Population
+
+Register of the Total Population (Swedish: Registret över totalbefolkningen, RTB) is managed by Statistics Sweden (SCB).
+
+Information on number of children, country of birth and immigration/emigration is received from here.
+
+----
+
+## The National Cancer Register
+
+The Swedish Cancer Register (Swedish: Cancerregistret) is managed by The National Board of Health and Welfare (Socialstyrelsen).
+
+The Swedish Cancer Register was founded in 1958 and it is compulsory for every health care provider to report newly detected cancer cases to the registry. For more information, see [https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-cancer-register/](https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-cancer-register/).
+
+No information from the Swedish Cancer Register is included in the base version of SHFDB4 but information from the register can be added upon request.
+
+----
+
+## The National Patient Register
+
+The National Patient Register (NPR) (Swedish: Patientregistret) is managed by The National Board of Health and Welfare (Socialstyrelsen).
+
+From 1987 the NPR includes all in-patient care in Sweden. Since 1997 it also covers out-patient surgical procedures and from 2001 also out-patient visits in speciality (but not primary) care. Each record contains medical information on surgical procedures, hospital department and discharge diagnoses coded according to International Classification of Diseases (ICD-9 for years 1987-1996 and ICD-10 for years 1997-, except for Skåne were ICD-10 was introduced 1998). The validity of HF diagnosis in cardiology and non-cardiology clinics in Sweden is 91% and 86%, respectively ([https://pubmed.ncbi.nlm.nih.gov/15916919](https://pubmed.ncbi.nlm.nih.gov/15916919)). For more information, see [https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-patient-register/](https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-patient-register/).
+
+From the NPR individual comorbidities (variables beginning with sos_com_) and hospitalization outcomes (variables beginning with sos_out_hosp) were calculated as well as the Charlson Comorbidity Index. Additional comorbidities and outcomes can be made available upon request.
+
+----
+
+## The Cause of Death Register
+
+The Cause of Death Register (Swedish: Dödsorsaksregistret) is managed by The National Board of Health and Welfare (Socialstyrelsen) and contains data on causes of death from 1961. For more information, see [https://www.socialstyrelsen.se/statistik-och-data/register/dodsorsaksregistret/](https://www.socialstyrelsen.se/statistik-och-data/register/dodsorsaksregistret/) (information only available in Swedish).
+
+From the Cause of Death Register deaths (variables beginning with sos_out_death) were calculated. Additional casuses of death can be made available upon request.
+
+----
+
+## The National Prescribed Drug Register
+
+The National Prescribed Drug Register (Swedish: Läkemedelsregistret) is managed by The National Board of Health and Welfare (Socialstyrelsen) and from July 2005 includes all dispensed drugs.
+
+For more information, see [https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-prescribed-drug-register/](https://www.socialstyrelsen.se/en/statistics-and-data/registers/national-prescribed-drug-register/).
+
+No information from the Prescribed Drug Register is included in the base version of SHFDB4 but information from the register can be added upon request.
+
+----
+
+## Primary care data from Region Stockholm
+
+VAL/KON is managed by Region Stockholm and contains information on healthcare from providers that have an agreement with Region Stockholm. For more information, see [www.gups.sll.se/val/Valhandbok.docx](www.gups.sll.se/val/Valhandbok.docx).
+
+No information from VAL/KON is included in the base version of SHFDB4 but information on certain diagnosis in primary care are available and can be added upon request.
+
+----
+
+## Swedish National Diabetes Register (NDR)
+
+The Swedish National Diabetes Register (NDR) is a national quality register for children and adults with diabetes. For more information, see [https://www.ndr.nu/](https://www.ndr.nu/).
+
+No information from NDR is included in the base version of SHFDB4 but information can be added upon request.
+
+----
+
+## Swedish ICD & Pacemaker Registry
+
+The Swedish ICD & Pacemaker Registry is a national quality register. For more information, see [https://www.pacemakerregistret.se/](https://www.pacemakerregistret.se/).
+
+No information from ICD & Pacemaker Registry is included in the base version of SHFDB4 but information can be added upon request.

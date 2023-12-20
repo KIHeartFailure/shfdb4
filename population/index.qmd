@@ -1,0 +1,57 @@
+---
+title: Population
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+load(file = here::here("../dm/data/data_for_webb.RData"))
+```             
+
+## Patients registered in SwedeHF
+
+All patients recorded in SwedeHF are included. 
+
+----
+
+## Patients with HF from the National Patient Register
+
+Patients with an ICD-10 code for HF in main position in the National Patient Register (ICD-10: I110, I130, I132, I255, I420, I423, 1425-9, I43, I50, J81, K761) starting from 2000-01-01 with no previous ICD-9/10 code for HF (I110 I130 I132 I255 I420 I423 1425 I426 I427 I428 I429 I43 I50 J81 K761 ICD-9: 414W 425E 425F 425G 425H 425W 425X 428) since 1987.
+
+----
+
+## HF-free controls
+
+For each post in SwedeHF or the first date in the National Patient Register a set of controls was chosen by Statistics Sweden in a ratio of 2:1. Since a person can have more than one registered post in SwedeHF a patient can have more than 2 controls in total, up to 2 for each posts.
+
+Eligible controls were persons without re-used Swedish personal identity numbers (PINs) and free of HF, defined either in the National Patient registry (ICD-10: I110, I130, I132, I255, I420, I423, 1425-9, I43, I50, J81, K761, R570, ICD-9: 414W, 425E-H, 425W, 425X, 428) or SwedeHF, at the end of the year of the index date for the case and matched by gender, year of birth and county of residence at index. For posts with age ≥ 90 years, controls were only matched by gender and year of birth due to the smaller available number of controls.
+
+The selection of controls was performed without replacement.
+
+A control was allowed to become a case after the year of the index date for the case.
+
+A full set of controls (n = 2) was not found for all cases:
+
+```{r ncon}
+kable(ncontrols)
+```
+
+----
+
+## Inclusion/exclusion criteria
+
+```{r flow}
+kable(flow)
+```

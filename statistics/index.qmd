@@ -1,0 +1,149 @@
+---
+title: Statistics
+---
+
+## Over time - interactive
+
+Descriptive statistics over time can be found: [https://swedehf.shinyapps.io/deskstatshfdb4](https://swedehf.shinyapps.io/deskstatshfdb4)
+
+----
+
+## Descriptive statistics
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+library(openxlsx)
+library(stringr)
+library(hfmisc)
+
+load(file = here::here("../dm/data/rsdata_for_webb.RData"))
+
+meta <- read.xlsx(here::here("../dm/metadata/meta_variables.xlsx"))
+rsdata <- rsdatafull
+```             
+
+```{r tab}
+tabvars <- names(rsdata)[str_detect(names(rsdata),
+  "lopnr|casecontrol|shf_source|sos_deathcause|scb_region|shf_centre|sos_outtime_|dtm|shf_aceisub|shf_arbsub|shf_arnidose|shf_bblsub|shf_mrasub|shf_sglt2sub",
+  negate = T
+)]
+
+tabfunc <- function(data) {
+  # median
+  tabmed <- print(
+    CreateTableOne(
+      data = data,
+      vars = tabvars,
+      strata = "casecontrol"
+    ),
+    varLabels = TRUE, missing = TRUE, printToggle = FALSE, test = FALSE,
+    catDigits = 1, contDigits = 1,
+    nonnormal = tabvars,
+    explain = FALSE,
+    noSpaces = TRUE
+  )
+  tabmed <- as_tibble(cbind(var = rownames(tabmed), tabmed))
+  return(tabmed)
+}
+
+# Posts
+tab <- tabfunc(data = rsdata)
+tabcasesswedehf <- tabfunc(data = rsdata %>% filter(casecontrol == "Case SwedeHF"))
+
+# Unique individuals
+rsdatau <- rsdata %>%
+  filter(casecontrol == "Case SwedeHF") %>%
+  group_by(lopnr) %>%
+  arrange(shf_indexdtm) %>%
+  slice(n()) %>%
+  ungroup()
+
+## Cases
+tabucases <- tabfunc(rsdatau)
+
+taball <- bind_cols(
+  tabucases %>% select(var, Missing, "Case SwedeHF"),
+  tabcasesswedehf %>% select(Missing, "Case SwedeHF"),
+  tab %>% select(-var, -Missing, -"Case SwedeHF")
+)
+
+taball <- taball %>%
+  # remove = Yes
+  mutate(across(everything(), str_replace_all, fixed(" = Yes"), "")) %>%
+  mutate(across(everything(), str_replace_all, fixed("0 (NaN)"), "")) %>%
+  mutate(across(everything(), str_replace_all, fixed("NA [NA, NA]"), "")) %>%
+  # to get labs and units in place
+  mutate(
+    var_tmp = str_split(var, " = ", simplify = TRUE)[, 1],
+    val_tmp = str_split(var, " = ", simplify = TRUE)[, 2]
+  )
+
+taball <- left_join(taball,
+  meta %>%
+    select(variable, label, unit),
+  by = c("var_tmp" = "variable")
+) %>%
+  mutate(
+    Variable = coalesce(label, var_tmp),
+    Variable = if_else(!is.na(unit),
+      paste0(Variable, " (", unit, ")"),
+      Variable
+    ),
+    Variable = if_else(val_tmp != "",
+      paste0(Variable, " ", val_tmp),
+      Variable
+    )
+  )
+
+# footnotes
+taball <- taball %>%
+  mutate(
+    footnote1 = if_else(str_detect(var_tmp, "^shf_"), footnote_marker_number(1), ""),
+    footnote2 = if_else(str_detect(var_tmp, "sos_"), footnote_marker_number(2), ""),
+    footnote3 = if_else(str_detect(var_tmp, "^scb_"), footnote_marker_number(3), "")
+  ) %>%
+  unite(footnote, starts_with("footnote"), sep = "") %>%
+  mutate(
+    # so no probs
+    # Variable = sanitize_text(Variable),
+    Variable = paste0(Variable, footnote),
+    # fix get/let
+    Variable = str_replace(Variable, ">=", "&ge;"),
+    Variable = str_replace(Variable, "<=", "&le;"),
+
+    # space in output
+    Variable = sub("  ", "&#160;&#160;&#160;", Variable)
+    # Variable <- str_replace(Variable, fixed("  "), "&nbsp;&nbsp;&nbsp;&nbsp;")
+    # Variable = sub("  ", "&nbsp", Variable)
+  ) %>%
+  select(Variable, Missing...2:"Control NPR")
+
+colnames(taball) <- c("Variable", rep(c("% missing", "SwedeHF"), 2), "Case NPR", "Control SwedeHF", "Control NPR")
+
+knitr::kable(taball, row.names = F, escape = FALSE) %>%
+  add_header_above(c(" " = 1, "Patients (last post)" = 2, "Posts" = 2, " " = 1, " " = 1, " " = 1)) %>%
+  footnote(
+    general = c(
+      "Patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.",
+      "Categorical variables are presented with n (%) and continuous variables with median [q1-q3]."
+    ),
+    number = c(
+      "Source: SwedeHF",
+      "Source: NPR",
+      "Source: SCB"
+    ), escape = FALSE,
+    threeparttable = T
+  )
+```

@@ -1,0 +1,84 @@
+---
+title: Definitions
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, include = TRUE, comment = "",
+  warning = FALSE, message = FALSE
+)
+options(knitr.kable.NA = "")
+```
+
+```{r loadlibsdata}
+library(tableone)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+load(file = here::here("../dm/data/rsdata_for_webb.RData"))
+```             
+
+## Index date
+
+
+Index date is defined as the registered date of discharge for in-patients and date of admission for out-patients in SwedeHF. For the patients identified through the National Patient Register with ICD codes the index date is defined as the first occurrence of a diagnosis of HF in main position. The controls receive the same index date as their matched case.
+
+----
+
+## Follow-up
+
+The follow-up period is defined as time from index date to emigration, death or end of follow-up, 2021-12-31, whichever came first.
+
+For the controls the follow-up period is defined as time from the matched cases index date to heart failure diagnosis (either in NPR or SwedeHF), emigration, death or end of follow-up, 2021-12-31, whichever came first.
+
+----
+
+## Socio-economic variables
+
+The socio-economic variables from LISA, Statistics Sweden, are from the year prior to the index year, so a patient with an index date 2015-03-06 will have income, marriage status and education from 2014.
+
+Limitations: Unmarried persons cohabiting without children are classified as Living alone. Education is not registered for individuals < 25 years.
+
+----
+
+## Comorbidities and outcomes
+
+For all comorbidities and hospitalizations from the NPR date of admission/visit (INDATUM) is used to calculate if it is a comorbidity or outcome. Adjoining hospitalizations, where the discharge date of the former hospitalization is the same as the admission date of the latter, are merged together into one hospitalization in order to take into account possible transferrals between wards/hospitals.
+
+Limitation: For the comorbidities MI, IHD, Stroke, CABG and PCI there is no time restriction applied. There is no data prior to 1987 (for PCI, CABG only from 1997) and the earlier registrations will therefore not have had the possibility to accumulate comorbidities to the same extent as the latter. For more details see [Data Sources](https://kiheartfailure.github.io/shfdb4/datasources/))).
+
+Limitation: Out-patient visits in speciality (but not primary) care are covered from 2001. Therefore, for the earlier visits, these are (partially) not included in the comorbidities.
+
+```{r comhospdeath}
+comoutmeta <- rbind(outcommeta, deathmeta)
+comoutmeta <- comoutmeta %>%
+  mutate(Code = gsub(",", ", ", Code),
+         Position = gsub("DIA_all", "All DIA", Position),
+         Position = gsub("OP_all", "All OP", Position),
+         Position = gsub("ekod_all", "All Ekod", Position),
+         Position = gsub("sos_deathcause", "ULORSAK", Position),
+         Period = gsub("0--1826.25", "-5yrs-0", Period), 
+         Period = gsub("0--1095.75", "-3yrs-0", Period),
+         Period = gsub("0-", "-0", Period),
+         Register = ifelse(stringr::str_detect(Variable, "sos_out_hosp|sos_out_counthosp"), "NPR (in)", Register)
+         )
+
+kable(comoutmeta)
+```
+
+----
+
+## Charlson comorbidity index
+
+The ICD-9/10 codes used are not necessarily the same as in the other comorbidities and outcomes but 
+from https://www.dovepress.com/articles.php?article_id=61144. 
+
+```{r cci}
+ccimeta <- ccimeta %>%
+  mutate(Code = gsub(",", ", ", Code),
+         Position = gsub("DIA_all", "All DIA", Position),
+         Period = gsub("0--3652.5", "-10yrs-0", Period))
+kable(ccimeta)
+```

@@ -1,0 +1,59 @@
+---
+title: Versions
+---
+
+## 4.0.0
+
+- This is the first version. Consists only of SwedeHF.
+
+----
+
+## 4.0.1
+
+- Changed name from kidney to renal (sos_com_kidney, sos_out_hospkidney, sos_outtime_hospkidney).
+
+- Changed ICD codes for HF (R57 to R570), affects variables sos_out_counthosphf, sos_outtime_hospcv, sos_out_hospcv, sos_outtime_hosphf, sos_out_hosphf, sos_out_deathcv, sos_out_deathnoncv, sos_out_deathcvhosphf, sos_out_deathhosphf, sos_timeprevhosphf, sos_durationhf, sos_out_hospnoncv, sos_outtime_hospnoncv, sos_location (all minor changes n < 100).
+
+- Changed ICD codes for sos_com_dementia (added R54) (minor change n = 35).
+
+- Changed ICD codes for sos_com_valvular (added Q230-3, Q235-9) (minor change n = 11).
+
+- Changed ICD codes for sos_out_hosprespiratory (added so all J) (major change n = 11282).
+
+- Added sos_com_respiratory.
+
+----
+
+## 4.1.0
+
+- Added HF population from NPR and HF-free controls.
+
+- Added categorical variable for Charlson Comorbidity Index and QoL.
+
+- Added shf_sos_prevhfh1yr.
+
+- Changed so levels of shf_potassium_cat starts with capital letter.
+
+----
+
+## 4.1.1
+
+- shf_age_cat 3 levels (previously 2)
+
+- Removed shf_eforg, shf_bmiimp, shf_bmiimp_cat
+
+- Added shf_fatigue, shf_outofbreath, shf_mobility, shf_hygiene, shf_activities, shf_pain, shf_anxiety
+
+- Excluded 3 patients with fu time = 0
+
+- Added data on discharge and admission labs in rsdatafull
+
+- shf_durationhf changed names of levels
+
+- 1-4 values changed in shf_durationhf, shf_primaryetiology, shf_diabetes, shf_sos_com_diabetes, shf_diabetestype, shf_af, shf_valvedisease, shf_lungdisease, shf_dcm due to different order of selection
+
+- Approx 100 changes in shf_height, shf_bmi, shf_bmi_cat due to imputation of bmi prior to cleaning outliers
+
+- sos_deathcause set to missing for patients with sos_out_death = No (patients who died > 2021-12-31)
+
+- Changes in number of patients for NPR HF, controls (NPR pop and SwedeHF) in rsdatafull due to SweeHF controls now also for patients died in-hospital, and linked hospitalizations used for defining the population and controls. 

@@ -1,0 +1,72 @@
+# website settings
+website:
+  title: "SHFDB4"                                # Your name
+  image: img/my_image.jpg
+  favicon: img/favicon.png
+  repo-url: https://github.com/KIHeartFailure/shfdb4/
+  
+  # start of the navigation bar at the top of the website
+  navbar:
+    pinned: true
+    search: true
+    logo: /img/logo.jpg
+    
+    # your sub-pages
+    left:
+      - text: "Population"
+        href: population/index.qmd
+      - text: "Data Sources"
+        href: datasources/index.qmd
+      - text: "Definitions"
+        href: definitions/index.qmd
+      - text: "Versions"
+        href: versions/index.qmd
+      - text: "Variable Description"
+        href: variabledescription/index.qmd
+      - text: "Statistics"
+        href: statistics/index.qmd
+        
+    # your social media handles
+    right:
+      - icon: envelope
+        aria-label: email
+        href: "mailto:lina.benson@ki.se"  
+  
+
+# Don't touch unless you know what you are doing :) ------------
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block"><a href="https://ki.se/en/meds/research-group-lars-lund/">Lars H Lund research group</a></span>
+    center: |
+      <span class="faux-block"><a href="https://github.com/KIHeartFailure/shfdb4/">View the code for this website on GitHub</a></span>
+    right: |
+      <span class="faux-block"><a href="https://github.com/KIHeartFailure/shfdb4dm/">View the R code for the database on GitHub</a></span>
+
+project:
+  type: website
+  output-dir: docs
+  
+  preview: 
+    port: 22222
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: true
+
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      - pulse
+      - html/styles.scss
+    toc: false
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true

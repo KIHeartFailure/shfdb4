@@ -1,0 +1,17 @@
+---
+layout: page
+title: Variable description
+execute:
+  freeze: true  # never re-render during project render
+engine: knitr 
+meta_variables:
+  xlsx: "meta_variables.xlsx"
+---
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg meta_variables-download" href="`r rmarkdown::metadata$meta_variables$xlsx`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Variable Description
+  </a>
+</p>
+```

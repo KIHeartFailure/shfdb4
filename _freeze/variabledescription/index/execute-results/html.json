@@ -1,0 +1,14 @@
+{
+  "hash": "b75e4547a913fbd84ad233eccaa860e1",
+  "result": {
+    "markdown": "---\nlayout: page\ntitle: Variable description\nexecute:\n  freeze: true  # never re-render during project render\nengine: knitr \nmeta_variables:\n  xlsx: \"meta_variables.xlsx\"\n---\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg meta_variables-download\" href=\"meta_variables.xlsx\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download Variable Description\n  </a>\n</p>\n```",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

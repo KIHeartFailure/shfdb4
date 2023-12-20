@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SHFDB4 - Statistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/logo.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">SHFDB4</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../population/index.html" rel="" target="">
+ <span class="menu-text">Population</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../datasources/index.html" rel="" target="">
+ <span class="menu-text">Data Sources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../definitions/index.html" rel="" target="">
+ <span class="menu-text">Definitions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../versions/index.html" rel="" target="">
+ <span class="menu-text">Versions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../variabledescription/index.html" rel="" target="">
+ <span class="menu-text">Variable Description</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../statistics/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Statistics</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lina.benson@ki.se" rel="" target=""><i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Statistics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="over-time---interactive" class="level2">
+<h2 class="anchored" data-anchor-id="over-time---interactive">Over time - interactive</h2>
+<p>Descriptive statistics over time can be found: <a href="https://swedehf.shinyapps.io/deskstatshfdb4">https://swedehf.shinyapps.io/deskstatshfdb4</a></p>
+<hr>
+</section>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h2>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Patients (last post)
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Posts
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% missing</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SwedeHF</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% missing</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SwedeHF</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Case NPR</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Control SwedeHF</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Control NPR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">n</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">114375</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">206634</td>
+<td style="text-align: left;">422876</td>
+<td style="text-align: left;">388838</td>
+<td style="text-align: left;">782222</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ncontrols</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2.0 [2.0, 2.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2.0 [2.0, 2.0]</td>
+<td style="text-align: left;">2.0 [2.0, 2.0]</td>
+<td style="text-align: left;">0.0 [0.0, 0.0]</td>
+<td style="text-align: left;">0.0 [0.0, 0.0]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time in hospital at index hospitalization (days)<sup>1</sup></td>
+<td style="text-align: left;">60.9</td>
+<td style="text-align: left;">5.0 [3.0, 9.0]</td>
+<td style="text-align: left;">63.8</td>
+<td style="text-align: left;">5.0 [3.0, 9.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Index year<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2015.0 [2010.0, 2019.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2014.0 [2010.0, 2018.0]</td>
+<td style="text-align: left;">2011.0 [2005.0, 2016.0]</td>
+<td style="text-align: left;">2014.0 [2010.0, 2018.0]</td>
+<td style="text-align: left;">2010.0 [2005.0, 2016.0]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Type of visit Index<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">68651 (60.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">115634 (56.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LVEF (%)<sup>1</sup></td>
+<td style="text-align: left;">85.6</td>
+<td style="text-align: left;">40.0 [30.0, 50.0]</td>
+<td style="text-align: left;">86.5</td>
+<td style="text-align: left;">39.0 [30.0, 45.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LVEF (%)<sup>1</sup></td>
+<td style="text-align: left;">19.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; ≥50</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23497 (25.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">38003 (22.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 40-49</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">22033 (24.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">39894 (23.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 30-39</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23867 (26.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">46520 (27.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; &lt;30</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">22177 (24.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">46790 (27.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LVEF (%)<sup>1</sup></td>
+<td style="text-align: left;">19.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; HFrEF</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">46044 (50.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">93310 (54.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; HFmrEF</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">22033 (24.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">39894 (23.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; HFpEF</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23497 (25.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">38003 (22.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sex Male<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">70503 (61.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">132380 (64.1)</td>
+<td style="text-align: left;">226402 (53.5)</td>
+<td style="text-align: left;">244109 (62.8)</td>
+<td style="text-align: left;">408993 (52.3)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Age (years)<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">77.0 [69.0, 84.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">76.0 [67.0, 83.0]</td>
+<td style="text-align: left;">80.0 [71.0, 86.0]</td>
+<td style="text-align: left;">75.0 [67.0, 82.0]</td>
+<td style="text-align: left;">79.0 [70.0, 85.0]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Civil status Single<sup>1</sup></td>
+<td style="text-align: left;">27.9</td>
+<td style="text-align: left;">36905 (44.8)</td>
+<td style="text-align: left;">27.5</td>
+<td style="text-align: left;">63189 (42.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Living conditions Own home<sup>1</sup></td>
+<td style="text-align: left;">44.5</td>
+<td style="text-align: left;">59898 (94.4)</td>
+<td style="text-align: left;">44.4</td>
+<td style="text-align: left;">110190 (95.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Location In-patient<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">44750 (39.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">74851 (36.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smoking<sup>1</sup></td>
+<td style="text-align: left;">26.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Current</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">9116 (10.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17267 (10.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Former</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">36685 (43.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">70920 (44.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Never</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">37769 (45.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">70225 (44.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smoking<sup>1</sup></td>
+<td style="text-align: left;">26.9</td>
+<td style="text-align: left;">9116 (10.9)</td>
+<td style="text-align: left;">23.3</td>
+<td style="text-align: left;">17267 (10.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alcohol Risk<sup>1</sup></td>
+<td style="text-align: left;">42.5</td>
+<td style="text-align: left;">2836 (4.3)</td>
+<td style="text-align: left;">38.9</td>
+<td style="text-align: left;">5179 (4.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duration of HF ≥6mo<sup>1</sup></td>
+<td style="text-align: left;">2.8</td>
+<td style="text-align: left;">68600 (61.7)</td>
+<td style="text-align: left;">2.5</td>
+<td style="text-align: left;">124933 (62.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Primary etiology<sup>1</sup></td>
+<td style="text-align: left;">40.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">40.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; DCM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4597 (6.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">10169 (8.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Heart valve disease</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5387 (8.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">9187 (7.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Hypertension</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17917 (26.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">31520 (25.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; IHD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">26407 (39.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">50168 (40.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Known alcoholic cardiomyopathy</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">467 (0.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">898 (0.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Other</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12828 (19.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">21510 (17.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NYHA class<sup>1</sup></td>
+<td style="text-align: left;">30.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">26.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; I</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">10233 (12.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17921 (11.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; II</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">37273 (46.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">73193 (48.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; III</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">29222 (36.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">56325 (36.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; IV</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3390 (4.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5173 (3.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NYHA class III-IV<sup>1</sup></td>
+<td style="text-align: left;">30.0</td>
+<td style="text-align: left;">32612 (40.7)</td>
+<td style="text-align: left;">26.1</td>
+<td style="text-align: left;">61498 (40.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Killip class<sup>1</sup></td>
+<td style="text-align: left;">94.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">95.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Chock or hypertension</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17 (0.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">27 (0.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Edema</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">160 (2.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">217 (2.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No signs of HF</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2904 (45.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4128 (47.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Rales or crackles</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3310 (51.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4349 (49.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weight (kg)<sup>1</sup></td>
+<td style="text-align: left;">12.9</td>
+<td style="text-align: left;">77.4 [66.0, 90.0]</td>
+<td style="text-align: left;">11.8</td>
+<td style="text-align: left;">79.0 [67.8, 91.5]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Weight at admission/visit (kg)<sup>1</sup></td>
+<td style="text-align: left;">32.7</td>
+<td style="text-align: left;">78.0 [66.4, 90.4]</td>
+<td style="text-align: left;">37.2</td>
+<td style="text-align: left;">79.0 [68.0, 91.8]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weight at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (kg)<sup>1</sup></td>
+<td style="text-align: left;">94.8</td>
+<td style="text-align: left;">75.5 [63.5, 88.7]</td>
+<td style="text-align: left;">96.1</td>
+<td style="text-align: left;">77.0 [65.0, 90.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Height (cm)<sup>1</sup></td>
+<td style="text-align: left;">32.0</td>
+<td style="text-align: left;">172.0 [164.0, 179.0]</td>
+<td style="text-align: left;">26.0</td>
+<td style="text-align: left;">172.0 [165.0, 179.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Systolic blood pressure (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">3.9</td>
+<td style="text-align: left;">125.0 [110.0, 140.0]</td>
+<td style="text-align: left;">3.3</td>
+<td style="text-align: left;">125.0 [110.0, 140.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Systolic blood pressure at admission/visit (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">25.0</td>
+<td style="text-align: left;">126.0 [112.0, 140.0]</td>
+<td style="text-align: left;">30.4</td>
+<td style="text-align: left;">125.0 [112.0, 140.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Systolic blood pressure at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">94.0</td>
+<td style="text-align: left;">125.0 [111.0, 140.0]</td>
+<td style="text-align: left;">95.5</td>
+<td style="text-align: left;">125.0 [110.0, 140.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diastolic blood pressure (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">3.8</td>
+<td style="text-align: left;">70.0 [65.0, 80.0]</td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">70.0 [65.0, 80.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diastolic blood pressure at admission/visit (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">25.0</td>
+<td style="text-align: left;">72.0 [65.0, 80.0]</td>
+<td style="text-align: left;">30.3</td>
+<td style="text-align: left;">72.0 [65.0, 80.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diastolic blood pressure at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (mmHg)<sup>1</sup></td>
+<td style="text-align: left;">93.9</td>
+<td style="text-align: left;">72.0 [65.0, 80.0]</td>
+<td style="text-align: left;">95.5</td>
+<td style="text-align: left;">72.0 [65.0, 80.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean arterial pressure<sup>1</sup></td>
+<td style="text-align: left;">3.8</td>
+<td style="text-align: left;">90.0 [81.7, 99.7]</td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">90.0 [81.7, 99.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean arterial pressure &gt;90<sup>1</sup></td>
+<td style="text-align: left;">3.8</td>
+<td style="text-align: left;">52421 (47.6)</td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">94489 (47.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heart rate (beats/min)<sup>1</sup></td>
+<td style="text-align: left;">6.5</td>
+<td style="text-align: left;">71.0 [63.0, 82.0]</td>
+<td style="text-align: left;">5.7</td>
+<td style="text-align: left;">71.0 [63.0, 81.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Heart rate at admission/visit (beats/min)<sup>1</sup></td>
+<td style="text-align: left;">27.0</td>
+<td style="text-align: left;">72.0 [63.0, 83.0]</td>
+<td style="text-align: left;">32.1</td>
+<td style="text-align: left;">71.0 [63.0, 82.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heart rate at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (beats/min)<sup>1</sup></td>
+<td style="text-align: left;">94.2</td>
+<td style="text-align: left;">74.0 [65.0, 85.0]</td>
+<td style="text-align: left;">95.6</td>
+<td style="text-align: left;">74.0 [65.0, 85.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Heart rate (beats/min) &gt;70<sup>1</sup></td>
+<td style="text-align: left;">6.5</td>
+<td style="text-align: left;">55096 (51.5)</td>
+<td style="text-align: left;">5.7</td>
+<td style="text-align: left;">98701 (50.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hemoglobin (g/L)<sup>1</sup></td>
+<td style="text-align: left;">8.2</td>
+<td style="text-align: left;">131.0 [118.0, 143.0]</td>
+<td style="text-align: left;">8.1</td>
+<td style="text-align: left;">132.0 [120.0, 144.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hemoglobin at admission/visit (g/L)<sup>1</sup></td>
+<td style="text-align: left;">29.2</td>
+<td style="text-align: left;">132.0 [119.0, 144.0]</td>
+<td style="text-align: left;">34.7</td>
+<td style="text-align: left;">133.0 [120.0, 145.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hemoglobin at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (g/L)<sup>1</sup></td>
+<td style="text-align: left;">96.3</td>
+<td style="text-align: left;">119.0 [106.0, 135.0]</td>
+<td style="text-align: left;">97.2</td>
+<td style="text-align: left;">122.0 [107.0, 137.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anemia<sup>1</sup></td>
+<td style="text-align: left;">8.2</td>
+<td style="text-align: left;">39397 (37.5)</td>
+<td style="text-align: left;">8.1</td>
+<td style="text-align: left;">66947 (35.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Potassium (mmol/L)<sup>1</sup></td>
+<td style="text-align: left;">19.9</td>
+<td style="text-align: left;">4.2 [3.9, 4.5]</td>
+<td style="text-align: left;">18.7</td>
+<td style="text-align: left;">4.2 [3.9, 4.5]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Potassium at admission/visit (mmol/L)<sup>1</sup></td>
+<td style="text-align: left;">36.0</td>
+<td style="text-align: left;">4.2 [3.9, 4.5]</td>
+<td style="text-align: left;">39.9</td>
+<td style="text-align: left;">4.2 [3.9, 4.5]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Potassium at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (mmol/L)<sup>1</sup></td>
+<td style="text-align: left;">94.8</td>
+<td style="text-align: left;">4.0 [3.7, 4.3]</td>
+<td style="text-align: left;">96.1</td>
+<td style="text-align: left;">4.0 [3.7, 4.3]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Potassium (mmol/L)<sup>1</sup></td>
+<td style="text-align: left;">19.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">18.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Normakalemia</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">83777 (91.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">155018 (92.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Hypokalemia</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4060 (4.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6444 (3.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Hyperkalemia</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3725 (4.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6446 (3.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sodium (mmol/l)<sup>1</sup></td>
+<td style="text-align: left;">35.0</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;">35.1</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sodium at admission/visit (mmol/l)<sup>1</sup></td>
+<td style="text-align: left;">46.8</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;">50.5</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sodium at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (mmol/l)<sup>1</sup></td>
+<td style="text-align: left;">95.0</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;">96.2</td>
+<td style="text-align: left;">140.0 [138.0, 142.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Creatinine (µmol/L)<sup>1</sup></td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">97.0 [79.0, 126.0]</td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: left;">97.0 [79.0, 124.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Creatinine at admission/visit (µmol/L)<sup>1</sup></td>
+<td style="text-align: left;">24.6</td>
+<td style="text-align: left;">95.0 [78.0, 122.0]</td>
+<td style="text-align: left;">30.2</td>
+<td style="text-align: left;">94.0 [77.0, 119.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Creatinine at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (µmol/L)<sup>1</sup></td>
+<td style="text-align: left;">94.8</td>
+<td style="text-align: left;">100.0 [78.0, 133.0]</td>
+<td style="text-align: left;">96.1</td>
+<td style="text-align: left;">97.0 [78.0, 128.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eGFR (mL/min/1.73 m²)<sup>1</sup></td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: left;">62.7 [44.8, 82.7]</td>
+<td style="text-align: left;">2.7</td>
+<td style="text-align: left;">64.0 [46.4, 83.4]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eGFR (mL/min/1.73 m²) &lt;60<sup>1</sup></td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: left;">51262 (46.2)</td>
+<td style="text-align: left;">2.7</td>
+<td style="text-align: left;">88931 (44.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NT-proBNP (pg/ml)<sup>1</sup></td>
+<td style="text-align: left;">44.7</td>
+<td style="text-align: left;">2066.0 [812.0, 4950.0]</td>
+<td style="text-align: left;">44.1</td>
+<td style="text-align: left;">2000.0 [810.0, 4563.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NT-proBNP at admission/visit (pg/ml)<sup>1</sup></td>
+<td style="text-align: left;">55.0</td>
+<td style="text-align: left;">1971.0 [770.0, 4633.0]</td>
+<td style="text-align: left;">57.6</td>
+<td style="text-align: left;">1900.0 [765.0, 4296.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NT-proBNP at discharge&nbsp;&nbsp;&nbsp;(hospitalized patients) (pg/ml)<sup>1</sup></td>
+<td style="text-align: left;">97.9</td>
+<td style="text-align: left;">3660.0 [1657.0, 8656.5]</td>
+<td style="text-align: left;">98.4</td>
+<td style="text-align: left;">3380.0 [1574.0, 7652.5]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BNP (pg/ml)<sup>1</sup></td>
+<td style="text-align: left;">95.6</td>
+<td style="text-align: left;">580.0 [219.0, 1335.5]</td>
+<td style="text-align: left;">95.1</td>
+<td style="text-align: left;">527.0 [202.0, 1230.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Transferrin (%)<sup>1</sup></td>
+<td style="text-align: left;">89.7</td>
+<td style="text-align: left;">24.0 [17.0, 32.0]</td>
+<td style="text-align: left;">90.5</td>
+<td style="text-align: left;">24.0 [17.0, 33.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferritin (µg/l)<sup>1</sup></td>
+<td style="text-align: left;">87.9</td>
+<td style="text-align: left;">142.0 [71.0, 264.0]</td>
+<td style="text-align: left;">88.8</td>
+<td style="text-align: left;">142.0 [71.0, 262.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QRS width (ms)<sup>1</sup></td>
+<td style="text-align: left;">22.3</td>
+<td style="text-align: left;">104.0 [90.0, 132.0]</td>
+<td style="text-align: left;">22.2</td>
+<td style="text-align: left;">106.0 [92.0, 136.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Left Bundle Branch Block (LBBB)<sup>1</sup></td>
+<td style="text-align: left;">21.7</td>
+<td style="text-align: left;">15800 (17.6)</td>
+<td style="text-align: left;">21.7</td>
+<td style="text-align: left;">30529 (18.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loop diuretic IV<sup>1</sup></td>
+<td style="text-align: left;">81.3</td>
+<td style="text-align: left;">5479 (25.5)</td>
+<td style="text-align: left;">82.3</td>
+<td style="text-align: left;">7554 (20.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferric carboxymaltose IV<sup>1</sup></td>
+<td style="text-align: left;">57.2</td>
+<td style="text-align: left;">2501 (5.1)</td>
+<td style="text-align: left;">59.6</td>
+<td style="text-align: left;">3917 (4.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ferric carboxymaltose IV dose (mg)<sup>1</sup></td>
+<td style="text-align: left;">97.9</td>
+<td style="text-align: left;">1000.0 [1000.0, 1000.0]</td>
+<td style="text-align: left;">98.2</td>
+<td style="text-align: left;">1000.0 [1000.0, 1000.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unplanned inotrope support<sup>1</sup></td>
+<td style="text-align: left;">39.4</td>
+<td style="text-align: left;">1356 (2.0)</td>
+<td style="text-align: left;">40.0</td>
+<td style="text-align: left;">3640 (2.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diuretic<sup>1</sup></td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">86951 (76.5)</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">158572 (77.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loop diuretic<sup>1</sup></td>
+<td style="text-align: left;">27.4</td>
+<td style="text-align: left;">60440 (72.8)</td>
+<td style="text-align: left;">27.8</td>
+<td style="text-align: left;">108999 (73.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loop diuretic substance<sup>1</sup></td>
+<td style="text-align: left;">72.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">75.5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Bumetanid</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">230 (0.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">339 (0.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Furosemid</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">30618 (98.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">50174 (98.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Toresamid</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">127 (0.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">203 (0.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loop diuretic dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">54.9</td>
+<td style="text-align: left;">40.0 [40.0, 80.0]</td>
+<td style="text-align: left;">54.6</td>
+<td style="text-align: left;">40.0 [40.0, 80.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loop diuretic usage When necessary<sup>1</sup></td>
+<td style="text-align: left;">47.3</td>
+<td style="text-align: left;">11615 (19.3)</td>
+<td style="text-align: left;">47.4</td>
+<td style="text-align: left;">20892 (19.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACEi<sup>1</sup></td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">54926 (48.3)</td>
+<td style="text-align: left;">0.4</td>
+<td style="text-align: left;">104596 (50.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACEi dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">52.1</td>
+<td style="text-align: left;">10.0 [5.0, 15.0]</td>
+<td style="text-align: left;">49.5</td>
+<td style="text-align: left;">10.0 [5.0, 15.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ARB<sup>1</sup></td>
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">30970 (27.4)</td>
+<td style="text-align: left;">0.9</td>
+<td style="text-align: left;">59400 (29.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ARB dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">73.0</td>
+<td style="text-align: left;">32.0 [15.0, 50.0]</td>
+<td style="text-align: left;">71.3</td>
+<td style="text-align: left;">32.0 [12.5, 50.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ARNi<sup>1</sup></td>
+<td style="text-align: left;">56.0</td>
+<td style="text-align: left;">6960 (13.8)</td>
+<td style="text-align: left;">58.6</td>
+<td style="text-align: left;">11611 (13.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACEi/ARB/ARNi<sup>1</sup></td>
+<td style="text-align: left;">1.3</td>
+<td style="text-align: left;">91155 (80.7)</td>
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">172045 (84.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Beta-blocker<sup>1</sup></td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">98019 (86.1)</td>
+<td style="text-align: left;">0.4</td>
+<td style="text-align: left;">180675 (87.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beta-blocker dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">14.5</td>
+<td style="text-align: left;">25.0 [7.5, 100.0]</td>
+<td style="text-align: left;">12.8</td>
+<td style="text-align: left;">25.0 [7.5, 100.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MRA<sup>1</sup></td>
+<td style="text-align: left;">0.9</td>
+<td style="text-align: left;">42376 (37.4)</td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">79343 (38.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MRA dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">75.3</td>
+<td style="text-align: left;">25.0 [25.0, 25.0]</td>
+<td style="text-align: left;">75.5</td>
+<td style="text-align: left;">25.0 [25.0, 25.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Digoxin<sup>1</sup></td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">14862 (13.1)</td>
+<td style="text-align: left;">0.4</td>
+<td style="text-align: left;">27435 (13.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platelet inhibitor<sup>1</sup></td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">44577 (39.2)</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">80458 (39.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oral anticoagulant<sup>1</sup></td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">52927 (46.6)</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">99517 (48.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Statin<sup>1</sup></td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">52912 (46.5)</td>
+<td style="text-align: left;">0.4</td>
+<td style="text-align: left;">101529 (49.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nitrate<sup>1</sup></td>
+<td style="text-align: left;">0.7</td>
+<td style="text-align: left;">15034 (13.2)</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">26719 (13.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SGLT2i<sup>1</sup></td>
+<td style="text-align: left;">91.7</td>
+<td style="text-align: left;">2022 (21.3)</td>
+<td style="text-align: left;">94.9</td>
+<td style="text-align: left;">2186 (20.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SGLT2i dose (mg/24h)<sup>1</sup></td>
+<td style="text-align: left;">98.2</td>
+<td style="text-align: left;">10.0 [10.0, 10.0]</td>
+<td style="text-align: left;">98.9</td>
+<td style="text-align: left;">10.0 [10.0, 10.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sinus node inhibitor<sup>1</sup></td>
+<td style="text-align: left;">58.3</td>
+<td style="text-align: left;">248 (0.5)</td>
+<td style="text-align: left;">61.3</td>
+<td style="text-align: left;">473 (0.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Device therapy<sup>1</sup></td>
+<td style="text-align: left;">1.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">93068 (82.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">164078 (80.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Pacemaker</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">10685 (9.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">19200 (9.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; CRT-P</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2154 (1.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4370 (2.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; CRT-D</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3369 (3.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">7741 (3.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; ICD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3524 (3.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">7669 (3.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Device therapy CRT/ICD<sup>1</sup></td>
+<td style="text-align: left;">1.4</td>
+<td style="text-align: left;">9047 (8.0)</td>
+<td style="text-align: left;">1.7</td>
+<td style="text-align: left;">19780 (9.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chest X-ray<sup>1</sup></td>
+<td style="text-align: left;">37.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">35.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">18770 (26.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">36050 (26.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Normal</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">17955 (24.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">32987 (24.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Pulmonary congestion</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">9713 (13.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">16557 (12.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Cardiomegaly</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">11934 (16.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23395 (17.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Pulmonary congestion &amp; cardiomegaly</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">13718 (19.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">24955 (18.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diabetes<sup>1</sup></td>
+<td style="text-align: left;">10.3</td>
+<td style="text-align: left;">17712 (17.3)</td>
+<td style="text-align: left;">9.7</td>
+<td style="text-align: left;">34450 (18.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diabetes<sup>1</sup></td>
+<td style="text-align: left;">28.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">28.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">65939 (80.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">118050 (80.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Type I</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1311 (1.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2244 (1.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Type II</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">14397 (17.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">27337 (18.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hypertension<sup>1</sup></td>
+<td style="text-align: left;">2.3</td>
+<td style="text-align: left;">63793 (57.1)</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">113641 (56.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atrial fibrillation/flutter<sup>1</sup></td>
+<td style="text-align: left;">0.7</td>
+<td style="text-align: left;">59692 (52.6)</td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">106801 (52.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lung disease<sup>1</sup></td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">20034 (17.9)</td>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">35327 (17.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valve disease<sup>1</sup></td>
+<td style="text-align: left;">3.5</td>
+<td style="text-align: left;">22501 (20.4)</td>
+<td style="text-align: left;">3.5</td>
+<td style="text-align: left;">40839 (20.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dilated cardiomyopathy<sup>1</sup></td>
+<td style="text-align: left;">4.6</td>
+<td style="text-align: left;">11420 (10.5)</td>
+<td style="text-align: left;">4.6</td>
+<td style="text-align: left;">25229 (12.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Revascularization<sup>1</sup></td>
+<td style="text-align: left;">3.0</td>
+<td style="text-align: left;">29922 (27.0)</td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">57913 (28.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Valve surgery<sup>1</sup></td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">7379 (6.6)</td>
+<td style="text-align: left;">2.3</td>
+<td style="text-align: left;">13971 (6.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ECG rythm<sup>1</sup></td>
+<td style="text-align: left;">7.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Sinus</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">53466 (50.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">97645 (50.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Atrial fibrillation</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">40427 (38.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">71468 (36.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; PM/Other</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12485 (11.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">24361 (12.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Follow-up referral HF nurse clinic<sup>1</sup></td>
+<td style="text-align: left;">9.6</td>
+<td style="text-align: left;">55145 (53.3)</td>
+<td style="text-align: left;">7.0</td>
+<td style="text-align: left;">118717 (61.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Follow-up referral speciality<sup>1</sup></td>
+<td style="text-align: left;">8.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Hospital</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">62428 (59.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">124411 (63.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Primary care</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">38790 (36.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">64273 (33.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Other</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4034 (3.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6012 (3.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Follow-up referral speciality Hospital<sup>1</sup></td>
+<td style="text-align: left;">8.0</td>
+<td style="text-align: left;">62428 (59.3)</td>
+<td style="text-align: left;">5.8</td>
+<td style="text-align: left;">124411 (63.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QoL EQ-5D<sup>1</sup></td>
+<td style="text-align: left;">69.5</td>
+<td style="text-align: left;">70.0 [50.0, 80.0]</td>
+<td style="text-align: left;">68.5</td>
+<td style="text-align: left;">70.0 [50.0, 80.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QoL EQ-5D<sup>1</sup></td>
+<td style="text-align: left;">69.5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">68.5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 0-25</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1646 (4.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2924 (4.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 26-50</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">8723 (25.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">15867 (24.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 51-75</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">14062 (40.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">26745 (41.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 76-100</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">10424 (29.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">19531 (30.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fatigue<sup>1</sup></td>
+<td style="text-align: left;">61.5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">60.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At rest</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2682 (6.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4430 (5.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At moderate effort</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12247 (27.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">22021 (26.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At more than moderate effort</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">21839 (49.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">42634 (51.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Unaffected</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">7239 (16.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">13191 (16.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Out of breath<sup>1</sup></td>
+<td style="text-align: left;">61.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">59.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At rest</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1491 (3.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2357 (2.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At moderate effort</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">13459 (30.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">24267 (29.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; At more than moderate effort</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">22848 (51.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">44385 (53.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Unaffected</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6750 (15.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12111 (14.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mobilty<sup>1</sup></td>
+<td style="text-align: left;">60.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">59.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Bedridden</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">579 (1.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">820 (1.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Some problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">20179 (45.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">35933 (43.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23931 (53.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">46384 (55.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hygiene<sup>1</sup></td>
+<td style="text-align: left;">61.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">60.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Can't wash and clothe</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">925 (2.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1292 (1.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Some problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5234 (11.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">8468 (10.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">38230 (86.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">72892 (88.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Main activities<sup>1</sup></td>
+<td style="text-align: left;">61.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">60.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Can't do</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2276 (5.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3616 (4.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Some problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12052 (27.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">21732 (26.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; No problem</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">29829 (67.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">56887 (69.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pain<sup>1</sup></td>
+<td style="text-align: left;">62.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">61.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Severe</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2712 (6.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4743 (6.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Moderate</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">19140 (44.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">35708 (44.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; None</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">20780 (48.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">39256 (49.3)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anxiety/Depression<sup>1</sup></td>
+<td style="text-align: left;">64.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">62.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Severe</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1835 (4.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3155 (4.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Moderate</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">15017 (36.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">28028 (36.5)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; None</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">24085 (58.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">45555 (59.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BMI (kg/m²)<sup>1</sup></td>
+<td style="text-align: left;">38.2</td>
+<td style="text-align: left;">26.3 [23.3, 30.2]</td>
+<td style="text-align: left;">32.6</td>
+<td style="text-align: left;">26.7 [23.6, 30.5]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BMI (kg/m²) ≥30<sup>1</sup></td>
+<td style="text-align: left;">38.2</td>
+<td style="text-align: left;">18566 (26.3)</td>
+<td style="text-align: left;">32.5</td>
+<td style="text-align: left;">39078 (28.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age (years)<sup>1</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; &lt;70</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">30727 (26.9)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">62624 (30.3)</td>
+<td style="text-align: left;">96349 (22.8)</td>
+<td style="text-align: left;">125509 (32.3)</td>
+<td style="text-align: left;">190209 (24.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 70-80</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">39316 (34.4)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">75073 (36.3)</td>
+<td style="text-align: left;">129929 (30.7)</td>
+<td style="text-align: left;">148752 (38.3)</td>
+<td style="text-align: left;">254503 (32.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; &gt;80</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">44332 (38.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">68937 (33.4)</td>
+<td style="text-align: left;">196598 (46.5)</td>
+<td style="text-align: left;">114577 (29.5)</td>
+<td style="text-align: left;">337510 (43.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Previous HFH &lt; 1 year<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">66506 (58.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">115625 (56.0)</td>
+<td style="text-align: left;">287370 (68.0)</td>
+<td style="text-align: left;">0 (0.0)</td>
+<td style="text-align: left;">0 (0.0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Atrial fibrillation/flutter<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">67696 (59.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">120790 (58.5)</td>
+<td style="text-align: left;">186607 (44.1)</td>
+<td style="text-align: left;">26061 (6.7)</td>
+<td style="text-align: left;">51634 (6.6)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IHD<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">61627 (53.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">113161 (54.8)</td>
+<td style="text-align: left;">191730 (45.3)</td>
+<td style="text-align: left;">50542 (13.0)</td>
+<td style="text-align: left;">105655 (13.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hypertension<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">77441 (67.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">137681 (66.6)</td>
+<td style="text-align: left;">218197 (51.6)</td>
+<td style="text-align: left;">83447 (21.5)</td>
+<td style="text-align: left;">148166 (18.9)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diabetes<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">31118 (27.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">57402 (27.8)</td>
+<td style="text-align: left;">96482 (22.8)</td>
+<td style="text-align: left;">31969 (8.2)</td>
+<td style="text-align: left;">57754 (7.4)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Valve disease<sup>12</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">30732 (26.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">55720 (27.0)</td>
+<td style="text-align: left;">64165 (15.2)</td>
+<td style="text-align: left;">7756 (2.0)</td>
+<td style="text-align: left;">13740 (1.8)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Country of birth<sup>3</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Sweden</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">98473 (86.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">176223 (85.3)</td>
+<td style="text-align: left;">370296 (87.6)</td>
+<td style="text-align: left;">338660 (87.1)</td>
+<td style="text-align: left;">695921 (89.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Europe</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12364 (10.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">23606 (11.4)</td>
+<td style="text-align: left;">42098 (10.0)</td>
+<td style="text-align: left;">37013 (9.5)</td>
+<td style="text-align: left;">66666 (8.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Other</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3536 (3.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6802 (3.3)</td>
+<td style="text-align: left;">10471 (2.5)</td>
+<td style="text-align: left;">13134 (3.4)</td>
+<td style="text-align: left;">19586 (2.5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Children<sup>3</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">95795 (83.8)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">172849 (83.6)</td>
+<td style="text-align: left;">350314 (82.8)</td>
+<td style="text-align: left;">329013 (84.6)</td>
+<td style="text-align: left;">654789 (83.7)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marital status Single/widowed/divorced<sup>3</sup></td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">61993 (54.2)</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">108224 (52.4)</td>
+<td style="text-align: left;">246424 (58.4)</td>
+<td style="text-align: left;">183019 (47.1)</td>
+<td style="text-align: left;">415532 (53.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Family type Living alone<sup>3</sup></td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">57758 (50.5)</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">99991 (48.4)</td>
+<td style="text-align: left;">232291 (55.0)</td>
+<td style="text-align: left;">168464 (43.4)</td>
+<td style="text-align: left;">391402 (50.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education<sup>3</sup></td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Compulsory school</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">50010 (44.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">88400 (43.7)</td>
+<td style="text-align: left;">206616 (51.1)</td>
+<td style="text-align: left;">145477 (38.1)</td>
+<td style="text-align: left;">345641 (46.0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Secondary school</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">43213 (38.6)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">79798 (39.4)</td>
+<td style="text-align: left;">140319 (34.7)</td>
+<td style="text-align: left;">147189 (38.5)</td>
+<td style="text-align: left;">263179 (35.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; University</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">18697 (16.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">34143 (16.9)</td>
+<td style="text-align: left;">57729 (14.3)</td>
+<td style="text-align: left;">89221 (23.4)</td>
+<td style="text-align: left;">142223 (18.9)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Disposable income (100 SEK)<sup>3</sup></td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">1534.0 [1226.0, 2041.0]</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">1545.0 [1236.0, 2076.0]</td>
+<td style="text-align: left;">1365.0 [1055.0, 1783.0]</td>
+<td style="text-align: left;">1653.0 [1269.0, 2478.0]</td>
+<td style="text-align: left;">1408.0 [1061.0, 1963.0]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Duration of HF (days)<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">303.0 [14.0, 1736.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">343.0 [18.0, 1883.0]</td>
+<td style="text-align: left;">0.0 [0.0, 101.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time since last HF hospitalization (days)<sup>2</sup></td>
+<td style="text-align: left;">40.8</td>
+<td style="text-align: left;">20.0 [0.0, 264.0]</td>
+<td style="text-align: left;">40.4</td>
+<td style="text-align: left;">22.0 [0.0, 287.0]</td>
+<td style="text-align: left;">0.0 [0.0, 0.0]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Location<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; HF in-patient</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">29379 (25.7)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">51246 (24.8)</td>
+<td style="text-align: left;">287370 (68.0)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Other in-patient</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">16270 (14.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">24942 (12.1)</td>
+<td style="text-align: left;">13696 (3.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; Out-patient</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">68726 (60.1)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">130446 (63.1)</td>
+<td style="text-align: left;">121810 (28.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hypertension<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">67327 (58.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">118776 (57.5)</td>
+<td style="text-align: left;">218197 (51.6)</td>
+<td style="text-align: left;">83447 (21.5)</td>
+<td style="text-align: left;">148166 (18.9)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diabetes<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">29925 (26.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">54888 (26.6)</td>
+<td style="text-align: left;">96482 (22.8)</td>
+<td style="text-align: left;">31969 (8.2)</td>
+<td style="text-align: left;">57754 (7.4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ischemic heart disease<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">60454 (52.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">110900 (53.7)</td>
+<td style="text-align: left;">190114 (45.0)</td>
+<td style="text-align: left;">50209 (12.9)</td>
+<td style="text-align: left;">105218 (13.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Myocardial infarction<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">44249 (38.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">81357 (39.4)</td>
+<td style="text-align: left;">130249 (30.8)</td>
+<td style="text-align: left;">27019 (6.9)</td>
+<td style="text-align: left;">54342 (6.9)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Angina pectoris<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">22181 (19.4)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">41455 (20.1)</td>
+<td style="text-align: left;">77036 (18.2)</td>
+<td style="text-align: left;">15463 (4.0)</td>
+<td style="text-align: left;">35088 (4.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PCI<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">21899 (19.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">41645 (20.2)</td>
+<td style="text-align: left;">47489 (11.2)</td>
+<td style="text-align: left;">16445 (4.2)</td>
+<td style="text-align: left;">23714 (3.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CABG<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">28938 (25.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">55861 (27.0)</td>
+<td style="text-align: left;">65972 (15.6)</td>
+<td style="text-align: left;">20000 (5.1)</td>
+<td style="text-align: left;">29752 (3.8)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dilated cardiomyopathy<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">9953 (8.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">22104 (10.7)</td>
+<td style="text-align: left;">13639 (3.2)</td>
+<td style="text-align: left;">0 (0.0)</td>
+<td style="text-align: left;">0 (0.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peripheral artery disease<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">10968 (9.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">18865 (9.1)</td>
+<td style="text-align: left;">34563 (8.2)</td>
+<td style="text-align: left;">10077 (2.6)</td>
+<td style="text-align: left;">19198 (2.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Atrial fibrillation/flutter<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">62870 (55.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">111846 (54.1)</td>
+<td style="text-align: left;">186607 (44.1)</td>
+<td style="text-align: left;">26061 (6.7)</td>
+<td style="text-align: left;">51634 (6.6)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stroke<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">18149 (15.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">30719 (14.9)</td>
+<td style="text-align: left;">70420 (16.7)</td>
+<td style="text-align: left;">33721 (8.7)</td>
+<td style="text-align: left;">77571 (9.9)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TIA<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">4109 (3.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">7105 (3.4)</td>
+<td style="text-align: left;">15546 (3.7)</td>
+<td style="text-align: left;">8388 (2.2)</td>
+<td style="text-align: left;">17945 (2.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stroke/TIA<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">20666 (18.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">35136 (17.0)</td>
+<td style="text-align: left;">79946 (18.9)</td>
+<td style="text-align: left;">39439 (10.1)</td>
+<td style="text-align: left;">89741 (11.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Valvular disease<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">23871 (20.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">42582 (20.6)</td>
+<td style="text-align: left;">64165 (15.2)</td>
+<td style="text-align: left;">7756 (2.0)</td>
+<td style="text-align: left;">13740 (1.8)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Renal failure<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">19467 (17.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">32496 (15.7)</td>
+<td style="text-align: left;">49689 (11.8)</td>
+<td style="text-align: left;">7026 (1.8)</td>
+<td style="text-align: left;">11962 (1.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hyperkalemia<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2500 (2.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">4333 (2.1)</td>
+<td style="text-align: left;">4706 (1.1)</td>
+<td style="text-align: left;">602 (0.2)</td>
+<td style="text-align: left;">1053 (0.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hypokalemia<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3174 (2.8)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">5136 (2.5)</td>
+<td style="text-align: left;">9876 (2.3)</td>
+<td style="text-align: left;">2081 (0.5)</td>
+<td style="text-align: left;">4182 (0.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dialysis<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">1131 (1.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">1863 (0.9)</td>
+<td style="text-align: left;">4464 (1.1)</td>
+<td style="text-align: left;">647 (0.2)</td>
+<td style="text-align: left;">1036 (0.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">COPD<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">16169 (14.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">28419 (13.8)</td>
+<td style="text-align: left;">51011 (12.1)</td>
+<td style="text-align: left;">10675 (2.7)</td>
+<td style="text-align: left;">19835 (2.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pneumonia/Flue/Respiratory infection<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">42328 (37.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">73936 (35.8)</td>
+<td style="text-align: left;">151531 (35.8)</td>
+<td style="text-align: left;">36286 (9.3)</td>
+<td style="text-align: left;">72903 (9.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Liver disease<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2609 (2.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">4680 (2.3)</td>
+<td style="text-align: left;">7973 (1.9)</td>
+<td style="text-align: left;">2683 (0.7)</td>
+<td style="text-align: left;">4199 (0.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Obstructive sleep apnea<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">4869 (4.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">9503 (4.6)</td>
+<td style="text-align: left;">10726 (2.5)</td>
+<td style="text-align: left;">5483 (1.4)</td>
+<td style="text-align: left;">7027 (0.9)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dementia<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2998 (2.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3838 (1.9)</td>
+<td style="text-align: left;">18772 (4.4)</td>
+<td style="text-align: left;">13962 (3.6)</td>
+<td style="text-align: left;">36467 (4.7)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Depression<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">4464 (3.9)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">7701 (3.7)</td>
+<td style="text-align: left;">15492 (3.7)</td>
+<td style="text-align: left;">8931 (2.3)</td>
+<td style="text-align: left;">17266 (2.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Malignant cancer within 3 years<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">15045 (13.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">25958 (12.6)</td>
+<td style="text-align: left;">54617 (12.9)</td>
+<td style="text-align: left;">43057 (11.1)</td>
+<td style="text-align: left;">79708 (10.2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Muscoloskeletal/connective tissue diseases within 3 years<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">37283 (32.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">66206 (32.0)</td>
+<td style="text-align: left;">124052 (29.3)</td>
+<td style="text-align: left;">77639 (20.0)</td>
+<td style="text-align: left;">137759 (17.6)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alcohol abuse<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3654 (3.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">6566 (3.2)</td>
+<td style="text-align: left;">10900 (2.6)</td>
+<td style="text-align: left;">5618 (1.4)</td>
+<td style="text-align: left;">8427 (1.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Severe bleeding<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">22922 (20.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">39016 (18.9)</td>
+<td style="text-align: left;">72037 (17.0)</td>
+<td style="text-align: left;">26950 (6.9)</td>
+<td style="text-align: left;">53017 (6.8)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Charlson Comorbidity Index<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3.0 [1.0, 4.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3.0 [1.0, 4.0]</td>
+<td style="text-align: left;">3.0 [1.0, 4.0]</td>
+<td style="text-align: left;">0.0 [0.0, 2.0]</td>
+<td style="text-align: left;">0.0 [0.0, 2.0]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charlson Comorbidity Index<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 0-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">29521 (25.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">55409 (26.8)</td>
+<td style="text-align: left;">115662 (27.4)</td>
+<td style="text-align: left;">276348 (71.1)</td>
+<td style="text-align: left;">569447 (72.8)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 2-3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">42102 (36.8)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">77627 (37.6)</td>
+<td style="text-align: left;">171369 (40.5)</td>
+<td style="text-align: left;">80492 (20.7)</td>
+<td style="text-align: left;">157568 (20.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; 4-7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">34525 (30.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">59881 (29.0)</td>
+<td style="text-align: left;">112854 (26.7)</td>
+<td style="text-align: left;">26414 (6.8)</td>
+<td style="text-align: left;">46081 (5.9)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;&nbsp;&nbsp; ≥8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">8227 (7.2)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">13717 (6.6)</td>
+<td style="text-align: left;">22991 (5.4)</td>
+<td style="text-align: left;">5584 (1.4)</td>
+<td style="text-align: left;">9126 (1.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heart failure hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">31555 (27.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">77994 (37.7)</td>
+<td style="text-align: left;">145770 (34.5)</td>
+<td style="text-align: left;">0 (0.0)</td>
+<td style="text-align: left;">0 (0.0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of heart failure hospitalizations<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">0.0 [0.0, 1.0]</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">0.0 [0.0, 1.0]</td>
+<td style="text-align: left;">0.0 [0.0, 1.0]</td>
+<td style="text-align: left;">0.0 [0.0, 0.0]</td>
+<td style="text-align: left;">0.0 [0.0, 0.0]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Any hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">79304 (69.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">154397 (74.7)</td>
+<td style="text-align: left;">320292 (75.7)</td>
+<td style="text-align: left;">199583 (51.3)</td>
+<td style="text-align: left;">478972 (61.2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CV hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">52581 (46.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">112733 (54.6)</td>
+<td style="text-align: left;">226587 (53.6)</td>
+<td style="text-align: left;">67618 (17.4)</td>
+<td style="text-align: left;">172962 (22.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-CV hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">63308 (55.4)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">123023 (59.5)</td>
+<td style="text-align: left;">261438 (61.8)</td>
+<td style="text-align: left;">177818 (45.7)</td>
+<td style="text-align: left;">429948 (55.0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stroke/TIA hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">8457 (7.4)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">16164 (7.8)</td>
+<td style="text-align: left;">40004 (9.5)</td>
+<td style="text-align: left;">28959 (7.4)</td>
+<td style="text-align: left;">78911 (10.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Myocardial infarction hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">6029 (5.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">12647 (6.1)</td>
+<td style="text-align: left;">34612 (8.2)</td>
+<td style="text-align: left;">10723 (2.8)</td>
+<td style="text-align: left;">29969 (3.8)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ischemic heart disease hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">10683 (9.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">24304 (11.8)</td>
+<td style="text-align: left;">56005 (13.2)</td>
+<td style="text-align: left;">15725 (4.0)</td>
+<td style="text-align: left;">41744 (5.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ventricular fibrillation/tachycardia hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">1321 (1.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3953 (1.9)</td>
+<td style="text-align: left;">4785 (1.1)</td>
+<td style="text-align: left;">223 (0.1)</td>
+<td style="text-align: left;">524 (0.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pneumonia/Flue/Respiratory infection hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">19445 (17.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">39431 (19.1)</td>
+<td style="text-align: left;">89403 (21.1)</td>
+<td style="text-align: left;">30443 (7.8)</td>
+<td style="text-align: left;">79891 (10.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pneumonia hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">12959 (11.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">26420 (12.8)</td>
+<td style="text-align: left;">58778 (13.9)</td>
+<td style="text-align: left;">22892 (5.9)</td>
+<td style="text-align: left;">60174 (7.7)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Renal failure hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">6471 (5.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">13711 (6.6)</td>
+<td style="text-align: left;">25296 (6.0)</td>
+<td style="text-align: left;">4574 (1.2)</td>
+<td style="text-align: left;">10094 (1.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Malignant cancer hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">8037 (7.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">14449 (7.0)</td>
+<td style="text-align: left;">35025 (8.3)</td>
+<td style="text-align: left;">37816 (9.7)</td>
+<td style="text-align: left;">91528 (11.7)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Severe bleeding hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">16292 (14.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">32475 (15.7)</td>
+<td style="text-align: left;">64957 (15.4)</td>
+<td style="text-align: left;">33183 (8.5)</td>
+<td style="text-align: left;">81045 (10.4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hyperkalemia hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">683 (0.6)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">1715 (0.8)</td>
+<td style="text-align: left;">2825 (0.7)</td>
+<td style="text-align: left;">235 (0.1)</td>
+<td style="text-align: left;">532 (0.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hypokalemia hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">322 (0.3)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">816 (0.4)</td>
+<td style="text-align: left;">1345 (0.3)</td>
+<td style="text-align: left;">542 (0.1)</td>
+<td style="text-align: left;">1195 (0.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Syncope hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">2691 (2.4)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">6094 (2.9)</td>
+<td style="text-align: left;">12114 (2.9)</td>
+<td style="text-align: left;">6400 (1.6)</td>
+<td style="text-align: left;">17134 (2.2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trauma hospitalization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">14517 (12.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">27837 (13.5)</td>
+<td style="text-align: left;">65663 (15.5)</td>
+<td style="text-align: left;">44297 (11.4)</td>
+<td style="text-align: left;">130595 (16.7)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coronary revascularization<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">3708 (3.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">8998 (4.4)</td>
+<td style="text-align: left;">18924 (4.5)</td>
+<td style="text-align: left;">8890 (2.3)</td>
+<td style="text-align: left;">17394 (2.2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Death<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">64876 (56.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">112286 (54.3)</td>
+<td style="text-align: left;">300917 (71.2)</td>
+<td style="text-align: left;">127556 (32.8)</td>
+<td style="text-align: left;">406620 (52.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CV death<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">38524 (33.7)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">68541 (33.2)</td>
+<td style="text-align: left;">178361 (42.2)</td>
+<td style="text-align: left;">40123 (10.3)</td>
+<td style="text-align: left;">145478 (18.6)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-CV death<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">26352 (23.0)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">43745 (21.2)</td>
+<td style="text-align: left;">122556 (29.0)</td>
+<td style="text-align: left;">87433 (22.5)</td>
+<td style="text-align: left;">261142 (33.4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hospitalization or death Sudden cardiac death<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">59 (0.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">110 (0.1)</td>
+<td style="text-align: left;">346 (0.1)</td>
+<td style="text-align: left;">99 (0.0)</td>
+<td style="text-align: left;">542 (0.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Composite CVD/HFH<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">53843 (47.1)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">106812 (51.7)</td>
+<td style="text-align: left;">247007 (58.4)</td>
+<td style="text-align: left;">40123 (10.3)</td>
+<td style="text-align: left;">145478 (18.6)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Composite Death/HFH<sup>2</sup></td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">72271 (63.2)</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">132076 (63.9)</td>
+<td style="text-align: left;">329180 (77.8)</td>
+<td style="text-align: left;">127556 (32.8)</td>
+<td style="text-align: left;">406620 (52.0)</td>
+</tr>
+</tbody><tfoot>
+<tr class="even">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Note: </span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> Patients have different follow-up times, this means that outcomes can not be interpreted directly from the table.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0;"><sup></sup> Categorical variables are presented with n (%) and continuous variables with median [q1-q3].</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup>1</sup> Source: SwedeHF</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0;"><sup>2</sup> Source: NPR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup>3</sup> Source: SCB</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><span class="faux-block"><a href="https://ki.se/en/meds/research-group-lars-lund/">Lars H Lund research group</a></span></div>   
+    <div class="nav-footer-center"><span class="faux-block"><a href="https://github.com/KIHeartFailure/shfdb4/">View the code for this website on GitHub</a></span></div>
+    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/KIHeartFailure/shfdb4dm/">View the R code for the database on GitHub</a></span></div>
+  </div>
+</footer>
+
+
+
+</body></html>
