@@ -57,3 +57,9 @@ title: Versions
 - sos_deathcause set to missing for patients with sos_out_death = No (patients who died > 2021-12-31)
 
 - Changes in number of patients for NPR HF, controls (NPR pop and SwedeHF) in rsdatafull due to SweeHF controls now also for patients died in-hospital, and linked hospitalizations used for defining the population and controls. 
+
+----
+
+## 4.1.2
+
+- changed labels for shf_durationhf (removed mo). Added months as unit to metadata. 
