@@ -17,7 +17,7 @@ about:
 
 # SwedeHF database 4 (SHFDB4)
 
-A Heart Failure cohort from Sweden 2000 - 2021. The population consists of 
+A Heart Failure cohort from Sweden 2000 - 2023. The population consists of 
 
 1) patients recorded in the Swedish Heart Failure Registry (SwedeHF), 
 

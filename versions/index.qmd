@@ -62,4 +62,13 @@ title: Versions
 
 ## 4.1.2
 
-- changed labels for shf_durationhf (removed mo). Added months as unit to metadata. 
+- changed labels for shf_durationhf (removed mo). Added months as unit to metadata
+
+----
+
+## 4.2.0
+
+- follow-up until 2023-12-31
+- Swedehf cohort until 2023-12-31
+- minor changes for variables for existing patients due to changes in data sources (SwedeHF, NPR, CDR)
+- minor changes in HF-free controls and NPR HF population due to changes in data sources (SwedeHF, NPR, CDR)

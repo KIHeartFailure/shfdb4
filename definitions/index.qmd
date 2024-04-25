@@ -29,9 +29,9 @@ Index date is defined as the registered date of discharge for in-patients and da
 
 ## Follow-up
 
-The follow-up period is defined as time from index date to emigration, death or end of follow-up, 2021-12-31, whichever came first.
+The follow-up period is defined as time from index date to emigration, death or end of follow-up, 2023-12-31, whichever came first.
 
-For the controls the follow-up period is defined as time from the matched cases index date to heart failure diagnosis (either in NPR or SwedeHF), emigration, death or end of follow-up, 2021-12-31, whichever came first.
+For the controls the follow-up period is defined as time from the matched cases index date to heart failure diagnosis (either in NPR or SwedeHF), emigration, death or end of follow-up, 2023-12-31, whichever came first.
 
 ----
 
