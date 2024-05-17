@@ -72,3 +72,10 @@ title: Versions
 - Swedehf cohort until 2023-12-31
 - minor changes for variables for existing patients due to changes in data sources (SwedeHF, NPR, CDR)
 - minor changes in HF-free controls and NPR HF population due to changes in data sources (SwedeHF, NPR, CDR)
+
+----
+
+## 4.2.1
+
+- changed labels of shf_potassium_cat
+- modifications to Charlson Comorbidity Index
