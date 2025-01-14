@@ -79,3 +79,11 @@ title: Versions
 
 - changed labels of shf_potassium_cat
 - modifications to Charlson Comorbidity Index
+
+----
+
+## 4.2.2
+
+- changed ICD/OP codes for sos_com_renal, sos_com_dialysis
+- removed sos_out_hosprenal, added sos_out_hosprenalacute and sos_out_renalendstage
+- created long dataset for all heart failure hospitalizations

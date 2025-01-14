@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SHFDB4 - Definitions</title>
+<title>Definitions – SHFDB4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -154,9 +154,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell">
-
-</div>
 <section id="index-date" class="level2">
 <h2 class="anchored" data-anchor-id="index-date">Index date</h2>
 <p>Index date is defined as the registered date of discharge for in-patients and date of admission for out-patients in SwedeHF. For the patients identified through the National Patient Register with ICD codes the index date is defined as the first occurrence of a diagnosis of HF in main position. The controls receive the same index date as their matched case.</p>
@@ -181,8 +178,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Limitation: Out-patient visits in speciality (but not primary) care are covered from 2001. Therefore, for the earlier visits, these are (partially) not included in the comorbidities.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
@@ -286,30 +282,30 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: left;">sos_com_renal</td>
-<td style="text-align: left;">ICD:N17-9, Z491, Z492 OP:KAS00, KAS10, KAS20, DR014, DR015, DR016, DR020, DR012, DR013, DR023, DR024, TJA33, TJA35</td>
+<td style="text-align: left;">ICD:N18, N19, Z491, Z492, T824, Z490, Z992, I120, I130, I131, I132, N085, M103, E122, E112, E132, E102, E142, R944, N02-4, N06-8, N25, N11, N14-6, Q611-3, Q60-4, K767 OP:DR014, DR016, DR020, DR012, DR013, DR024, TJA33, TJA35, DR055, DR056, DR060, DR061, QF006 Ekod:Y841</td>
+<td style="text-align: left;">NPR (in+out)</td>
+<td style="text-align: left;">All DIA All OP All Ekod</td>
+<td style="text-align: left;">-5yrs-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sos_com_dialysis</td>
+<td style="text-align: left;">ICD:Z490, Z491, Z492, Z992 OP:DR012, DR013, DR014, DR016, DR020, DR024, TJA33, DR055, DR056, DR060, DR061, QF006</td>
 <td style="text-align: left;">NPR (in+out)</td>
 <td style="text-align: left;">All DIA All OP</td>
 <td style="text-align: left;">-5yrs-0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sos_com_hyperkalemia</td>
 <td style="text-align: left;">ICD:E875</td>
 <td style="text-align: left;">NPR (in+out)</td>
 <td style="text-align: left;">All DIA</td>
 <td style="text-align: left;">-5yrs-0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sos_com_hypokalemia</td>
 <td style="text-align: left;">ICD:E876</td>
 <td style="text-align: left;">NPR (in+out)</td>
 <td style="text-align: left;">All DIA</td>
-<td style="text-align: left;">-5yrs-0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sos_com_dialysis</td>
-<td style="text-align: left;">ICD:Z491, Z492 OP:DR014, DR015, DR016, DR020, DR012, DR013, DR023, DR024, TJA33, TJA35</td>
-<td style="text-align: left;">NPR (in+out)</td>
-<td style="text-align: left;">All DIA All OP</td>
 <td style="text-align: left;">-5yrs-0</td>
 </tr>
 <tr class="even">
@@ -467,69 +463,76 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">1-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sos_out_hosprenal</td>
-<td style="text-align: left;">ICD:N17-9, KAS00, KAS10, KAS20, Z491, Z492 OP:DR014, DR015, DR016, DR020, DR012, DR013, DR023, DR024, TJA33, TJA35</td>
+<td style="text-align: left;">sos_out_hosprenalacute</td>
+<td style="text-align: left;">ICD:N17, N184, N185, Z491, Z492 OP:DR014, DR015, DR016, DR020, DR023, DR024, DR055, DR056</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA All OP</td>
 <td style="text-align: left;">1-</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">sos_out_renalendstage</td>
+<td style="text-align: left;">ICD:Z940, Z491, Z492, Z992, Z490 OP:KAS10, KAS20, DR012-4, DR016, DR020, DR024, TJA33, DR055, DR056, DR060, DR061, QF006</td>
+<td style="text-align: left;">NPR (in+out)</td>
+<td style="text-align: left;">All DIA All OP</td>
+<td style="text-align: left;">1-</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">sos_out_hospcancer</td>
 <td style="text-align: left;">ICD:C</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sos_out_hospbleed</td>
 <td style="text-align: left;">ICD:S064, S065, S066, I850, I983, K226, K250, K252, K254, K256, K260, K262, K264, K266, K270, K272, K274, K276, K280, K284, K286, K290, K625, K661, K920, K921, K922, H431, N02, R04, R58, T810, D629 OP:DR029</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA All OP</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sos_out_hosphyperkalemia</td>
 <td style="text-align: left;">ICD:E875</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sos_out_hosphypokalemia</td>
 <td style="text-align: left;">ICD:E876</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sos_out_hospsyncope</td>
 <td style="text-align: left;">ICD:R55</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sos_out_hosptrauma</td>
 <td style="text-align: left;">ICD:S, T0, T10-4</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">HDIA</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sos_out_hosprevasc</td>
 <td style="text-align: left;">OP:FNG, FNA, FNB, FNC, FND, FNE, FNF, FNH</td>
 <td style="text-align: left;">NPR (in)</td>
 <td style="text-align: left;">All OP</td>
 <td style="text-align: left;">1-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sos_out_deathcv</td>
 <td style="text-align: left;">ICD:I, J81, K761, R570, G45</td>
 <td style="text-align: left;">Cause of Death</td>
 <td style="text-align: left;">ULORSAK</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sos_out_deathscd</td>
 <td style="text-align: left;">ICD:I461</td>
 <td style="text-align: left;">Cause of Death</td>
@@ -542,7 +545,6 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-</div>
 <hr>
 </section>
 <section id="charlson-comorbidity-index" class="level2">
@@ -550,8 +552,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The ICD-9/10 codes used are not necessarily the same as in the other comorbidities and outcomes but from https://www.dovepress.com/articles.php?article_id=61144.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
@@ -687,7 +688,6 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-</div>
 
 
 </section>
@@ -728,18 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -771,7 +760,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -779,7 +790,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
